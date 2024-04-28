@@ -86,6 +86,16 @@ export const Personal: React.FC<IconsProps> = ({width, height}) => {
     </svg>
     )
 }
+
+export const CoinsIcon: React.FC =() =>{
+    return (<svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18.9999 8.49019V11.4902C18.9999 12.7902 15.6815 14.4902 11.5881 14.4902C7.49474 14.4902 4.17639 12.7902 4.17639 11.4902V8.99019" stroke="black" />
+    <path d="M4.48779 9.24938C5.40367 10.3974 8.23602 11.4744 11.5882 11.4744C15.6817 11.4744 19 9.86839 19 8.48838C19 7.71338 17.9549 6.86437 16.3148 6.26837"/>
+    <path d="M15.8235 3.49026V6.49028C15.8235 7.79028 12.5051 9.49029 8.41175 9.49029C4.31835 9.49029 1 7.79028 1 6.49028V3.49026" stroke="black" />
+    <path  d="M8.41175 6.47426C12.5051 6.47426 15.8235 4.86825 15.8235 3.48825C15.8235 2.10724 12.5051 0.490234 8.41175 0.490234C4.31835 0.490234 1 2.10724 1 3.48825C1 4.86825 4.31835 6.47426 8.41175 6.47426Z" stroke="black" />
+    </svg>
+    )
+}
 export const Scroll: React.FC = () => {
     return (<svg width="222" height="222" role="icon" viewBox="0 0 222 222" fill="none" xmlns="http://www.w3.org/2000/svg" >
         <rect width="222" height="222" fill="url(#pattern0)" />

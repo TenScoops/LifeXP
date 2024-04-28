@@ -1,16 +1,17 @@
-import {FaStar} from "react-icons/fa";
-
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { FaStar } from "react-icons/fa";
+import { PiCoins } from "react-icons/pi";
 
 
 interface QuestcardProps {
     QuestType: string
-    Reward: string
+    Exp: string
     Icon: React.ReactElement
     Description: string
+    Coins: string
 }
 
-const Questcard: React.FC<QuestcardProps> = ({QuestType, Icon, Description, Reward}) => {
+const Questcard: React.FC<QuestcardProps> = ({QuestType, Icon, Description, Exp, Coins}) => {
     return (
         <div className="flex flex-col space-y-5 items-center justify-center rounded-xl border-black w-[256px] h-[420px] border-1 shadow-sharp-sm 
                         icon-hover4 mb-10 mr-10 ml-10 shadow-transition duration-200 hover:shadow-sharp-lg cursor-pointer">
@@ -46,9 +47,16 @@ const Questcard: React.FC<QuestcardProps> = ({QuestType, Icon, Description, Rewa
                 <h1 className="text-sm mb-1">
                     Reward
                 </h1>
-                <h1 className="text-sm tracking-normal font-bold">
-                    {Reward}
-                </h1>
+                <div className="flex flex-row text-sm tracking-normal font-bold">
+                    {Exp} 
+                    <div className='ml-2 mr-2'>
+                        {"+"}
+                    </div>
+                    <div className='mr-1'>
+                        <PiCoins size={20}/>
+                    </div>
+                    {Coins}
+                </div>
             </div>
 
             <button className="bg-quest-gray2 border-[1.5px] border-black text-white 
@@ -60,9 +68,10 @@ const Questcard: React.FC<QuestcardProps> = ({QuestType, Icon, Description, Rewa
 }
 
 Questcard.propTypes = {
-    Reward: PropTypes.string.isRequired,
+    Exp: PropTypes.string.isRequired,
     QuestType: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    Icon: PropTypes.element.isRequired
+    Icon: PropTypes.element.isRequired,
+    Coins: PropTypes.string.isRequired
 };
 export default Questcard

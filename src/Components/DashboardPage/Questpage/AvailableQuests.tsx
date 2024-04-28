@@ -1,8 +1,8 @@
-import Questcard from "./Questcard";
 import FilterMenu from "./FilterMenu";
+import Questcard from "./Questcard";
 
 // import { CiDumbbell } from "react-icons/ci";
-import {Fitness, Work, Personal} from "../../Icons";
+import { Fitness, Personal, Work } from "../../Icons";
 
 const AvailableQuests = () => {
 
@@ -10,22 +10,26 @@ const AvailableQuests = () => {
         "Daily Quest": {
             Icon: (<Fitness width={"45"} height={"45"} />),
             Description: "Run 1 mile",
-            Reward: "300 XP"
+            Exp: "300XP",
+            Coins: "100"
         },
         "Work": {
             Icon: (<Work width={"45"} height={"45"} />),
             Description: "Complete a work task",
-            Reward: "200 XP"
+            Exp: "200XP",
+            Coins: "35"
         },
         "Personal": {
             Icon: (<Personal width={"45"} height={"45"} />),
             Description: "Meditate 15 minutes",
-            Reward: "250 XP"
+            Exp: "250XP",
+            Coins: "60"
         },
         "Fitness": {
             Icon: (<Fitness width={"45"} height={"45"} />),
             Description: "Curl 20lb dumbbells",
-            Reward: "210 XP"
+            Exp: "210XP",
+            Coins: "40"
         }
     }
 
@@ -44,13 +48,14 @@ const AvailableQuests = () => {
                     </div>
                     {/* quest cards */}
                     <div className="grid  xl:grid-cols-4 lmd:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-0 ">
-                        {Object.entries(quests).map(([QuestType, {Icon, Description, Reward}]) => (
+                        {Object.entries(quests).map(([QuestType, {Icon, Description, Exp, Coins}]) => (
                             <Questcard
                                 key={QuestType}
                                 QuestType={QuestType}
                                 Icon={Icon}
                                 Description={Description}
-                                Reward={Reward}
+                                Exp={Exp}
+                                Coins={Coins}
                             />
                         ))}
                     </div>
