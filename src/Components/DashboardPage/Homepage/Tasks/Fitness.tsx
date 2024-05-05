@@ -1,5 +1,5 @@
-import {CiSquarePlus} from "react-icons/ci";
-import {IoIosCheckbox} from "react-icons/io";
+import { CiSquarePlus } from "react-icons/ci";
+import { IoIosCheckbox } from "react-icons/io";
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';

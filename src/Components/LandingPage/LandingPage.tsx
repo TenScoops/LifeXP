@@ -38,7 +38,7 @@ const LandingPage = () => {
             {/* <Login isOpen={loginFormShowing} /> */}
 
             {/* Nav */}
-            <div ref={navBarSectionRef} className={`flex flex-row items-center justify-between h-14 w-full transition-opacity ease-in duration-700 ${isNavBarSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={navBarSectionRef} className={`flex flex-row items-center justify-between h-14 w-full transition-opacity ease-in duration-300 ${isNavBarSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <LogoWithBrandName />
                 <NavLink to="/home">
                     <button
@@ -55,7 +55,7 @@ const LandingPage = () => {
             {/* {toHomeScreen && <Navigate to="/"/>} */}
             {/* main content */}
             {/* Tasks section */}
-            <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 transition-opacity ease-in duration-700 ${isTasksSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 transition-opacity ease-in duration-300 ${isTasksSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <div className="hidden lg:flex items-center space-x-4 lg:ml-20 ">
                     <GameIcon width={"37"} height={"37"} />
                     <h1 className="text-[36px] tracking-wider text-gray-900">
@@ -75,7 +75,7 @@ const LandingPage = () => {
                             <p className="text-xl mb-10 w-[475px]">
                                 Gain experience points from your day to day tasks!
                             </p>
-                            <NavLink to={"/"}>
+                            <NavLink to={"/home"}>
                                 <button className="flex flex-row space-x-4 items-center justify-center 
                                                         h-10 w-40 mr-6 mt-1 mb-2 border custom-gray border-black shadow-sharp 
                                                         shadow-transition hover:shadow-sharp-xl icon-hover4 cursor-pointer">
@@ -92,7 +92,7 @@ const LandingPage = () => {
             </div>
 
             {/* levelup  section*/}
-            <div ref={levelUpSectionRef} className={`hidden lg:flex flex-col justify-center items-center h-[520px] ml-8 transition-opacity ease-in duration-700 ${isLevelUpSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={levelUpSectionRef} className={`hidden lg:flex flex-col justify-center items-center h-[520px] ml-8 transition-opacity ease-in duration-300 ${isLevelUpSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[80%] ">
                     <img src={levelImg} width={400} />
                     <div className=" flex flex-col items justify-center">
@@ -105,7 +105,7 @@ const LandingPage = () => {
                         </p>
 
                         <div className="flex lg:justify-end ">
-                            <NavLink to={"/"}>
+                            <NavLink to={"/home"}>
                                 <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                                         mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                                         hover:shadow-sharp-xl icon-hover4 cursor-pointer   ">
@@ -119,7 +119,7 @@ const LandingPage = () => {
             </div>
 
             {/* Questing section */}
-            <div ref={questSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-700 ${isQuestSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={questSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isQuestSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[90%]">
                     <div className=" flex flex-col items justify-center">
 
@@ -129,7 +129,7 @@ const LandingPage = () => {
                         <p className="text-xl mb-10 w-[500px]">
                             Take on quests similar to your day to day tasks and gain Rewards and levels!
                         </p>
-                        <NavLink to={"/"}>
+                        <NavLink to={"/home"}>
                             <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                                 mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                                 hover:shadow-sharp-xl icon-hover4 cursor-pointer">
@@ -143,7 +143,7 @@ const LandingPage = () => {
             </div>
 
             {/* Emotional check-in section */}
-            <div ref={emotionalCheckInSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-700 ${isEmotionalCheckInSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={emotionalCheckInSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isEmotionalCheckInSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[85%]">
                     <img src={emcheckinImg} width={500} />
                     <div className=" flex flex-col items justify-center">
@@ -156,7 +156,7 @@ const LandingPage = () => {
                             where you can document your thoughts!
                         </p>
                         <div className="flex justify-end">
-                            <NavLink to={"/"}>
+                            <NavLink to={"/home"}>
                                 <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                                     mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                                     hover:shadow-sharp-xl icon-hover4 cursor-pointer">
@@ -171,7 +171,7 @@ const LandingPage = () => {
             </div>
 
             {/* What is LifeXP */}
-            <div ref={aboutSectionRef} className={`h-[620px] mt-32 mb-10 lg:mb-0 md:mt-0 flex flex-col justify-center items-center space-y-16 transition-opacity ease-in duration-700 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={aboutSectionRef} className={`h-[620px] mt-32 mb-10 lg:mb-0 md:mt-0 flex flex-col justify-center items-center space-y-16 transition-opacity ease-in duration-300 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <h1 className="text-2xl md:text-3xl">What exactly is LifeXP?</h1>
                 <p className="w-[90%] text-center text-lg leading-10 lg:leading-10 tracking-normal md:text-left md:w-[60%] md:text-xl ">
                     Life XP is a gamified productivity app designed to cater to a broader range of needs beyond task management.
@@ -179,7 +179,7 @@ const LandingPage = () => {
                     user engagement models. Life XP aims to be a holistic tool for life management. This innovative blend makes Life XP
                     a comprehensive solution for boosting productivity and emotional health.
                 </p>
-                <NavLink to={"/"}>
+                <NavLink to={"/home"}>
                     <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                         mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                         hover:shadow-sharp-xl icon-hover4 cursor-pointer">
@@ -189,7 +189,7 @@ const LandingPage = () => {
                 </NavLink>
             </div>
 
-            <footer ref={footerSectionRef} className={`border-t border-black h-[130px] mt-40 lg:mt-10 transition-opacity ease-in duration-700 ${isFooterSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <footer ref={footerSectionRef} className={`border-t border-black h-[130px] mt-40 lg:mt-10 transition-opacity ease-in duration-300 ${isFooterSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <div className="flex justify-center items-center cursor-default mt-3">
                     <h1 className="text-2xl border-r border-black px-2 mr-2">
                         Life XP
