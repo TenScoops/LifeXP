@@ -3,6 +3,9 @@ import { GiScrollUnfurled } from "react-icons/gi";
 import { MdHome } from "react-icons/md";
 import { PiSmileyFill } from "react-icons/pi";
 
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+
 import { NavLink } from "react-router-dom";
 
 const MdScreenNavPlus = () => {
@@ -60,30 +63,46 @@ const MdScreenNavPlus = () => {
                 </NavLink>
             </li>
             <li >
-                <NavLink
-                    to="/checkin"
-                    className={({isActive}) => isActive ? 'active-link' : ''}
+                <Tippy
+                    delay={100}
+                    placement="bottom"
+                    content="in progress"
                 >
                     <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
                         <PiSmileyFill size={25} />
                         <span className='text-sm'>
-                            Check-in
+                            Achievements
                         </span>
                     </div>
-                </NavLink>
+                </Tippy>
             </li>
             <li >
-                <NavLink
-                    to="/checkin"
-                    className={({isActive}) => isActive ? 'active-link' : ''}
-                >
+                <Tippy
+                        delay={100}
+                        placement="bottom"
+                        content="in progress"
+                    >
                     <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
                         <PiSmileyFill size={25} />
                         <span className='text-sm'>
-                            Check-in
+                            Badges
                         </span>
                     </div>
-                </NavLink>
+                </Tippy>
+            </li>
+            <li >
+                <Tippy
+                        delay={100}
+                        placement="bottom"
+                        content="in progress"
+                    >
+                    <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
+                        <PiSmileyFill size={25} />
+                        <span className='text-sm'>
+                            Store
+                        </span>
+                    </div>
+                </Tippy>
             </li>
 
         </ul>
