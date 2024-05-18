@@ -1,9 +1,9 @@
-import {MdHome} from "react-icons/md";
-import {GiScrollUnfurled} from "react-icons/gi";
-import {FaTree} from "react-icons/fa";
-import {PiSmileyFill} from "react-icons/pi";
+import { FaTree } from "react-icons/fa";
+import { GiScrollUnfurled } from "react-icons/gi";
+import { MdHome } from "react-icons/md";
+import { PiSmileyFill } from "react-icons/pi";
 
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 const MdScreenNavPlus = () => {
     return (<nav className='hidden md:block'>
@@ -42,6 +42,32 @@ const MdScreenNavPlus = () => {
                         <FaTree size={25} />
                         <span className='text-sm'>
                             Skill Tree
+                        </span>
+                    </div>
+                </NavLink>
+            </li>
+            <li >
+                <NavLink
+                    to="/checkin"
+                    className={({isActive}) => isActive ? 'active-link' : ''}
+                >
+                    <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
+                        <PiSmileyFill size={25} />
+                        <span className='text-sm'>
+                            Check-in
+                        </span>
+                    </div>
+                </NavLink>
+            </li>
+            <li >
+                <NavLink
+                    to="/checkin"
+                    className={({isActive}) => isActive ? 'active-link' : ''}
+                >
+                    <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
+                        <PiSmileyFill size={25} />
+                        <span className='text-sm'>
+                            Check-in
                         </span>
                     </div>
                 </NavLink>

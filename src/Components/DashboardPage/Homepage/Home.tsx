@@ -1,9 +1,9 @@
 import Tasks from "./Tasks/Tasks";
 import Tracking from "./Tracking/Tracking";
 
-import {useState} from "react";
+import { useState } from "react";
 
-import {useIsLargeScreen} from "../../../Hooks";
+import { useIsLargeScreen } from "../../../Hooks";
 
 const Home = () => {
     const [thePage, setThePage] = useState<string>("Tasks")

@@ -43,14 +43,16 @@ const Tasks: React.FC<TasksProps> = ({setThePage}) => {
 
             </div>
 
-            {/* Fitness */}
-            <Fitness />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+                {/* Fitness */}
+                <Fitness />
 
-            {/* Work */}
-            <Work />
+                {/* Work */}
+                <Work />
 
-            {/* Personal */}
-            <Personal />
+                {/* Personal */}
+                <Personal />
+            </div>
             
             {/* <Popup /> */}
         </div>
