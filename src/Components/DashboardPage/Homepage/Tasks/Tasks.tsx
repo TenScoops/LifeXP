@@ -36,14 +36,14 @@ const Tasks: React.FC<TasksProps> = ({setThePage}) => {
                         </h1>
                     </div>
                 </Tippy>
-                <div className="flex items-center ml-6 lg:ml-16">
+                <div className="flex items-center ml-6 ">
                     <WiStars size={30} />
                     <h1 className="text-lg underline mb-1 ">Your Tasks</h1>
                 </div>
 
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 ">
                 {/* Fitness */}
                 <Fitness />
 

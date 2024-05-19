@@ -104,10 +104,27 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
 
                             <span className="px-2"><PiDotsThreeLight size={25} /></span>
                         </div>
+                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
+                            <span className="ml-2">
+                                <Work width={"28"} height={"28"} />
+                            </span>
+                            <p>Complete a work task</p>
+                            {/* <p className="px-2 text-xs">...</p> */}
+                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
+                        </div>
+                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
+                            <span className="ml-2">
+                                <Personal width={"28"} height={"28"} />
+                            </span>
+                            <p>Journal  thoughts</p>
+
+                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
+                        </div>
+                        
                     </div>
                 </div>
                 {/* level up meter */}
-                <div className="flex flex-col items-center text-sm relative mt-12">
+                <div className="flex flex-col absolute bottom-0 items-center text-sm  mt-12">
                     {/* level and xp */}
                     <div className="mb-4 cursor-default">
                         <h1>Level: 5</h1>

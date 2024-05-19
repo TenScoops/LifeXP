@@ -5,7 +5,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 const Fitness = () => {
-    return (<div className="w-10/12 lg:ml-28">
+    return (<div className="w-10/12 lg:ml-16">
         <div className="flex justify-between lg:w-10/12">
             <h1 className="text-normal mb-2">Fitness</h1>
             <Tippy
