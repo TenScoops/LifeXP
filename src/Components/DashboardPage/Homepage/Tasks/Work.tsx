@@ -15,7 +15,7 @@ const Work = () => {
             </button>
         </Tippy>
     </div>
-    <div className="h-32  flex justify-between md:h-[600px] border custom-gray border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 transition-transform duration-200 cursor-pointer">
+    <div className="h-32 w-96 flex justify-between md:h-[600px] border custom-gray border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 transition-transform duration-200 cursor-pointer">
         <div className="ml-6 mt-4 space-y-4">
             <form className="flex items-center">
                 <input type="checkbox" name="category" id="fitness" className="custom-checkbox form-radio h-5 w-5 text-gray-600" />
