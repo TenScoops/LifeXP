@@ -1,5 +1,5 @@
 import { CiSquarePlus } from "react-icons/ci";
-import { WorkIcon } from "../../../Icons";
+// import { WorkIcon } from "../../../Icons";
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -7,10 +7,10 @@ import 'tippy.js/dist/tippy.css';
 const Work = () => {
     return(<div className="w-10/12 lg:ml-16">   
     <div className="flex justify-between lg:w-10/12">
-        <div className="flex items-center mb-2">
-            <h1 className="text-normal mr-2">Work</h1>
-            <WorkIcon width="18" height="18"/> 
-        </div>
+        {/* <div className="flex items-center "> */}
+            <h1 className="text-normal mr-2 mb-2">Work</h1>
+            {/* <WorkIcon width="18" height="18"/>  */}
+        {/* </div> */}
         <Tippy 
             delay={800}
             content="add a task">
