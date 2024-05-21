@@ -65,7 +65,7 @@ const MdScreenNavPlus = () => {
             </li>
             <li >
                 <Tippy
-                    delay={100}
+                    delay={10}
                     placement="bottom"
                     content="in progress"
                 >
@@ -79,7 +79,7 @@ const MdScreenNavPlus = () => {
             </li>
             <li >
                 <Tippy
-                        delay={100}
+                        delay={10}
                         placement="bottom"
                         content="in progress"
                     >
@@ -93,7 +93,7 @@ const MdScreenNavPlus = () => {
             </li>
             <li >
                 <Tippy
-                        delay={100}
+                        delay={10}
                         placement="bottom"
                         content="in progress"
                     >

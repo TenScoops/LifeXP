@@ -1,7 +1,7 @@
-import {useOutsideClick} from '../../../Hooks'
-import {useState, useRef} from 'react'
+import { useRef, useState } from 'react'
+import { useOutsideClick } from '../../../Hooks'
 
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const ProfileAndMenu = () => {
     const [openProfileOptions, setOpenProfileOptions] = useState<boolean>(false)
@@ -29,12 +29,12 @@ const ProfileAndMenu = () => {
                         </h1>
                     </div>
 
-                    <div className='flex items-center flex-row mt-2 h-6 hover:bg-gray-200 cursor-pointer'>
+                    {/* <div className='flex items-center flex-row mt-2 h-6 hover:bg-gray-200 cursor-pointer'>
 
                         <h1 className='text-sm ml-2 '>
                             Achievements
                         </h1>
-                    </div>
+                    </div> */}
                     <NavLink to={"/"}>
                         <div className='flex items-center space-x-1 flex-row hover:bg-gray-200 mt-2 h-6 cursor-pointer'>
                             <h1 className='text-sm ml-2'>
