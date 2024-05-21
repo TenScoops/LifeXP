@@ -2,31 +2,31 @@ import FilterMenu from "./FilterMenu";
 import Questcard from "./Questcard";
 
 // import { CiDumbbell } from "react-icons/ci";
-import { Fitness, Personal, Work } from "../../Icons";
+import { FitnessIcon, PersonalIcon, WorkIcon } from "../../Icons";
 
 const AvailableQuests = () => {
 
     const quests = {
         "Daily Quest": {
-            Icon: (<Fitness width={"45"} height={"45"} />),
+            Icon: (<FitnessIcon width={"45"} height={"45"} />),
             Description: "Run 1 mile",
             Exp: "300XP",
             Coins: "100"
         },
         "Work": {
-            Icon: (<Work width={"45"} height={"45"} />),
+            Icon: (<WorkIcon width={"45"} height={"45"} />),
             Description: "Complete a work task",
             Exp: "200XP",
             Coins: "35"
         },
         "Personal": {
-            Icon: (<Personal width={"45"} height={"45"} />),
+            Icon: (<PersonalIcon width={"45"} height={"45"} />),
             Description: "Meditate 15 minutes",
             Exp: "250XP",
             Coins: "60"
         },
         "Fitness": {
-            Icon: (<Fitness width={"45"} height={"45"} />),
+            Icon: (<FitnessIcon width={"45"} height={"45"} />),
             Description: "Curl 20lb dumbbells",
             Exp: "210XP",
             Coins: "40"

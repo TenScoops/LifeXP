@@ -11,6 +11,8 @@ import Fitness from "./Fitness";
 import Personal from "./Personal";
 import Work from "./Work";
 
+// import Popup from "./Popup";
+
 interface TasksProps {
     setThePage: Dispatch<SetStateAction<string>>
 }

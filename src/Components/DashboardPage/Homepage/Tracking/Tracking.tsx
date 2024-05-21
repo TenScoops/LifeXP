@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-import { FireIcon, Fitness, Personal, Work } from "../../../Icons";
+import { FireIcon, FitnessIcon, PersonalIcon, WorkIcon } from "../../../Icons";
 
 import { PiDotsThreeLight } from "react-icons/pi";
 
@@ -82,7 +82,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                     <div className="flex flex-col items-center  w-full space-y-3">
                         <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
                             <span className="ml-2">
-                                <Fitness width={"28"} height={"28"} />
+                                <FitnessIcon width={"28"} height={"28"} />
                             </span>
                             <p>Complete 1 mile</p>
                             {/* <p className="px-2 text-xs">...</p> */}
@@ -90,7 +90,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                         </div>
                         <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
                             <span className="ml-2">
-                                <Work width={"28"} height={"28"} />
+                                <WorkIcon width={"28"} height={"28"} />
                             </span>
                             <p>Complete a work task</p>
                             {/* <p className="px-2 text-xs">...</p> */}
@@ -98,7 +98,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                         </div>
                         <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
                             <span className="ml-2">
-                                <Personal width={"28"} height={"28"} />
+                                <PersonalIcon width={"28"} height={"28"} />
                             </span>
                             <p>Meditate 15 minutes</p>
 
@@ -106,7 +106,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                         </div>
                         <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
                             <span className="ml-2">
-                                <Work width={"28"} height={"28"} />
+                                <WorkIcon width={"28"} height={"28"} />
                             </span>
                             <p>Complete a work task</p>
                             {/* <p className="px-2 text-xs">...</p> */}
@@ -114,7 +114,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                         </div>
                         <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
                             <span className="ml-2">
-                                <Personal width={"28"} height={"28"} />
+                                <PersonalIcon width={"28"} height={"28"} />
                             </span>
                             <p>Journal  thoughts</p>
 
