@@ -29,8 +29,11 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
             </div>
 
             {/* profile circle icon */}
-            <div className='border border-black rounded-full w-[70px] h-[70px] cursor-pointer mb-16'>
-
+            <div className="flex items-center mb-16 mr-5">
+                
+                <h1 className="text-lg">
+                    Hi, user
+                </h1>
             </div>
 
             {/* navbar options */}

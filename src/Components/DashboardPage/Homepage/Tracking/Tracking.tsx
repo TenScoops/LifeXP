@@ -1,21 +1,54 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 
 import { FireIcon, FitnessIcon, PersonalIcon, WorkIcon } from "../../../Icons";
 
-import { PiDotsThreeLight } from "react-icons/pi";
 
 import PropTypes from 'prop-types';
 
 import Tippy from "@tippyjs/react";
 import { BsListTask } from 'react-icons/bs';
-
+import { PiDotsThreeLight } from "react-icons/pi";
 // import Streakcalendar from '../../assets/Streakcalendar.png'
+
+import { useOutsideClick } from '../../../../Hooks/index';
+
+
 
 interface TrackingProps {
     setThePage: Dispatch<SetStateAction<string>>
 }
 
 const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
+
+
+    const questOptionsRef: React.MutableRefObject<null> = useRef(null)
+    useOutsideClick({ref: questOptionsRef, callback: () => {setOpenMenuIndex(null)}});
+
+    const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
+    
+    const DropDown = () => {
+        return (
+            <div 
+                ref={questOptionsRef}
+                className="h-20 w-36 border bg-white border-black border-b-2 absolute right-5 space-y-2 ">
+                <h1 className="hover:bg-gray-200 px-2 py-1">Untrack</h1>
+                <h1 className="hover:bg-gray-200 px-2 py-1">Mark complete</h1>
+            </div>
+        );
+    };
+
+    const handleMenuClick = (index: number) => {
+        setOpenMenuIndex(openMenuIndex === index ? null : index);
+    };
+
+    const questItems = [
+        { id: 1, icon: FitnessIcon, label: 'Complete 1 mile' },
+        { id: 2, icon: WorkIcon, label: 'Complete a work task' },
+        { id: 3, icon: PersonalIcon, label: 'Meditate 15 minutes' },
+        { id: 4, icon: WorkIcon, label: 'Complete a work task' },
+        { id: 5, icon: PersonalIcon, label: 'Journal thoughts' }
+    ];
+
     const styles = {
         "quests": "space-y-3 text-sm flex flex-col items-center",
         "hoverBase": "relative bottom-14 left-0 border-2 bg-white border-black w-80 h-24 rounded-md text-xs space-y-3 flex flex-col justify-center",
@@ -64,65 +97,42 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                     {/* Daily Quests */}
                     <h1 className="underline mb-2">Daily Tasks</h1>
                     <div>
-                        <label>Complete all work tasks</label>
-                        <input type="checkbox" />
+                        <label className="mr-2">Complete all work tasks</label>
+                        <input type="checkbox" className="mr-1"/>
                         <label>50 XP</label>
                     </div>
 
                     <div>
-                        <label>Complete a quest</label>
-                        <input type="checkbox" />
+                        <label className="mr-2">Complete a quest</label>
+                        <input type="checkbox" className="mr-1"/>
                         <label>50 XP</label>
                     </div>
                 </div>
                 {/* Tracked quests */}
                 <div className="space-y-3 text-sm flex flex-col items-center w-full">
                     <h1 className="underline mb-2">Tracked Quests</h1>
-
-                    <div className="flex flex-col items-center  w-full space-y-3">
-                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
-                            <span className="ml-2">
-                                <FitnessIcon width={"28"} height={"28"} />
-                            </span>
-                            <p>Complete 1 mile</p>
-                            {/* <p className="px-2 text-xs">...</p> */}
-                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
-                        </div>
-                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
-                            <span className="ml-2">
-                                <WorkIcon width={"28"} height={"28"} />
-                            </span>
-                            <p>Complete a work task</p>
-                            {/* <p className="px-2 text-xs">...</p> */}
-                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
-                        </div>
-                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
-                            <span className="ml-2">
-                                <PersonalIcon width={"28"} height={"28"} />
-                            </span>
-                            <p>Meditate 15 minutes</p>
-
-                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
-                        </div>
-                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
-                            <span className="ml-2">
-                                <WorkIcon width={"28"} height={"28"} />
-                            </span>
-                            <p>Complete a work task</p>
-                            {/* <p className="px-2 text-xs">...</p> */}
-                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
-                        </div>
-                        <div className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
-                            <span className="ml-2">
-                                <PersonalIcon width={"28"} height={"28"} />
-                            </span>
-                            <p>Journal  thoughts</p>
-
-                            <span className="px-2"><PiDotsThreeLight size={25} /></span>
-                        </div>
+                    
+                    {/* Quests */}
+              
+                    <div className="flex flex-col items-center relative  w-full space-y-3">
+                        {questItems.map((item, index) => (
+                            <div key={item.id} className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
+                                <span className="ml-2">
+                                    <item.icon width={"28"} height={"28"} />
+                                </span>
+                                <p>{item.label}</p>
+                                <button
+                                    className="pr-2"
+                                    onClick={() => {handleMenuClick(index)}}
+                                >
+                                    <PiDotsThreeLight size={25} />
+                                </button>
+                                {openMenuIndex === index && <DropDown />}
+                            </div>
+                        ))}
                         
                     </div>
-                </div>
+                  
                 {/* level up meter */}
                 <div className="flex flex-col absolute bottom-0 items-center text-sm  mt-12">
                     {/* level and xp */}
@@ -172,6 +182,8 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                 </div>
             </div>
         </div>
+        </div>
+        
     )
 }
 

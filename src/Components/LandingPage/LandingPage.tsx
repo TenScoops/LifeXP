@@ -4,12 +4,16 @@ import questingImg from "../../assets/Questing.png";
 import taskImg from "../../assets/Tasks.png";
 
 import { useRef } from "react";
-import { NavLink } from "react-router-dom";
 import { Enter, GameIcon } from "../Icons";
 import { LogoWithBrandName } from "../Reusables";
 import { isSectionVisible } from "./IsSectionVisible";
 
-const LandingPage = () => {
+
+interface LandingPageProps {
+    handleLoginClick: ()=>void
+}
+
+const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
     // const [loginFormShowing, setLoginFormState] = useState<boolean>(false);
 
     // const toggleLoginForm = (event: React.SyntheticEvent): void => {
@@ -40,16 +44,16 @@ const LandingPage = () => {
             {/* Nav */}
             <div ref={navBarSectionRef} className={`flex flex-row items-center justify-between h-14 w-full transition-opacity ease-in duration-300 ${isNavBarSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <LogoWithBrandName />
-                <NavLink to="/home">
+                {/* <NavLink to="/home"> */}
                     <button
-                        // onClick={toggleLoginForm}
+                        onClick={handleLoginClick}
                         className="flex flex-row items-center justify-center h-9 w-32 sm:mr-6 mt-1 border custom-gray 
                                     border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 
                                     cursor-pointer">
                         <h1 className="mr-2">Login</h1>
                         <Enter />
                     </button>
-                </NavLink>
+                {/* </NavLink> */}
             </div>
 
             {/* {toHomeScreen && <Navigate to="/"/>} */}
@@ -66,23 +70,25 @@ const LandingPage = () => {
 
                 <div className="flex flex-col justify-center items-center  md:mt-0">
 
-                    <div className="grid lg:grid-cols-2 w-[82%] justify-center">
+                    <div className="grid lg:grid-cols-2 w-[82%]  justify-center">
                         <div className=" flex flex-col justify-center items-center lg:items-start ml-6 lg:ml-0">
 
                             <h1 className="text-3xl mb-5">
                                 Get xp from tasks!
                             </h1>
-                            <p className="text-xl mb-10 w-[475px]">
+                            <p className="text-xl mb-10 w-[515px]">
                                 Gain experience points from your day to day tasks!
                             </p>
-                            <NavLink to={"/home"}>
-                                <button className="flex flex-row space-x-4 items-center justify-center 
+                            {/* <NavLink to={"/home"}> */}
+                                <button 
+                                    onClick={handleLoginClick}
+                                    className="flex flex-row space-x-4 items-center justify-center 
                                                         h-10 w-40 mr-6 mt-1 mb-2 border custom-gray border-black shadow-sharp 
                                                         shadow-transition hover:shadow-sharp-xl icon-hover4 cursor-pointer">
                                     <span>Get Started</span>
                                     <GameIcon width={"14"} height={"14"} />
                                 </button>
-                            </NavLink>
+                            {/* </NavLink> */}
                         </div>
                         <div>
                             <img src={taskImg} width={600} height={600} />
@@ -105,14 +111,16 @@ const LandingPage = () => {
                         </p>
 
                         <div className="flex lg:justify-end ">
-                            <NavLink to={"/home"}>
-                                <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
+                            {/* <NavLink to={"/home"}> */}
+                                <button 
+                                    onClick={handleLoginClick}
+                                    className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                                         mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                                         hover:shadow-sharp-xl icon-hover4 cursor-pointer   ">
                                     <span>Level Up</span>
                                     <GameIcon width={"14"} height={"14"} />
                                 </button>
-                            </NavLink>
+                            {/* </NavLink> */}
                         </div>
                     </div>
                 </div>
@@ -129,14 +137,16 @@ const LandingPage = () => {
                         <p className="text-xl mb-10 w-[500px]">
                             Take on quests similar to your day to day tasks and gain Rewards and levels!
                         </p>
-                        <NavLink to={"/home"}>
-                            <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
+                        {/* <NavLink to={"/home"}> */}
+                            <button 
+                                onClick={handleLoginClick}
+                                className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                                 mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                                 hover:shadow-sharp-xl icon-hover4 cursor-pointer">
                                 <span>Get Questing</span>
                                 <GameIcon width={"14"} height={"14"} />
                             </button>
-                        </NavLink>
+                        {/* </NavLink> */}
                     </div>
                     <img src={questingImg} width={500} />
                 </div>
@@ -156,14 +166,16 @@ const LandingPage = () => {
                             where you can document your thoughts!
                         </p>
                         <div className="flex justify-end">
-                            <NavLink to={"/home"}>
-                                <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
+                            {/* <NavLink to={"/home"}> */}
+                                <button 
+                                    onClick={handleLoginClick}
+                                    className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                                     mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                                     hover:shadow-sharp-xl icon-hover4 cursor-pointer">
                                     <span>Get Started</span>
                                     <GameIcon width={"14"} height={"14"} />
                                 </button>
-                            </NavLink>
+                            {/* </NavLink> */}
                         </div>
                     </div>
 
@@ -179,14 +191,16 @@ const LandingPage = () => {
                     user engagement models. Life XP aims to be a holistic tool for life management. This innovative blend makes Life XP
                     a comprehensive solution for boosting productivity and emotional health.
                 </p>
-                <NavLink to={"/home"}>
-                    <button className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
+                {/* <NavLink to={"/home"}> */}
+                    <button 
+                        onClick={handleLoginClick}
+                        className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
                                         mt-1 border custom-gray border-black shadow-sharp shadow-transition 
                                         hover:shadow-sharp-xl icon-hover4 cursor-pointer">
                         <span>Get Started</span>
                         <GameIcon width={"14"} height={"14"} />
                     </button>
-                </NavLink>
+                {/* </NavLink> */}
             </div>
 
             <footer ref={footerSectionRef} className={`border-t border-black h-[130px] mt-40 lg:mt-10 transition-opacity ease-in duration-300 ${isFooterSectionVisible? "opacity-100" : "opacity-0"}`}>

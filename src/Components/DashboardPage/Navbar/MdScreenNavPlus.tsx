@@ -63,7 +63,7 @@ const MdScreenNavPlus = () => {
                     </div>
                 </NavLink>
             </li>
-            <li >
+            <li className=" hidden lg:block">
                 <Tippy
                     delay={10}
                     placement="bottom"
@@ -77,7 +77,7 @@ const MdScreenNavPlus = () => {
                     </div>
                 </Tippy>
             </li>
-            <li >
+            <li className="hidden xl:block">
                 <Tippy
                         delay={10}
                         placement="bottom"
@@ -91,7 +91,7 @@ const MdScreenNavPlus = () => {
                     </div>
                 </Tippy>
             </li>
-            <li >
+            <li className="hidden xl:block">
                 <Tippy
                         delay={10}
                         placement="bottom"

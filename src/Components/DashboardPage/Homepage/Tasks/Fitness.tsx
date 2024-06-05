@@ -14,7 +14,7 @@ const Fitness = () => {
                 {/* <FitnessIcon width="18" height="18"/> */}
             {/* </div> */}
             <Tippy
-                delay={800}
+                delay={100}
                 content="add a task">
                 <button>
                     <CiSquarePlus size={25} className="icon-hover" />
