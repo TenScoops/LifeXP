@@ -8,6 +8,8 @@ import { Enter, GameIcon } from "../Icons";
 import { LogoWithBrandName } from "../Reusables";
 import { isSectionVisible } from "./IsSectionVisible";
 
+import PropTypes from 'prop-types';
+
 
 interface LandingPageProps {
     handleLoginClick: ()=>void
@@ -228,4 +230,9 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
 
     )
 }
+
+LandingPage.propTypes = {
+    handleLoginClick: PropTypes.func.isRequired,
+}
+
 export default LandingPage

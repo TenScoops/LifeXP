@@ -28,8 +28,8 @@
 /* Loading screen css */
 
 .loader {
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid rgb(71, 71, 71); /* Blue */
+  border: 10px solid #f3f3f3; 
+  border-top: 10px solid rgb(71, 71, 71);
   border-radius: 50%;
   width: 100px;
   height: 100px;

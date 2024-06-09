@@ -19,7 +19,7 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleLoginClick = () => {
+    const handleLoginClick = () => {//logic for loading screen
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
