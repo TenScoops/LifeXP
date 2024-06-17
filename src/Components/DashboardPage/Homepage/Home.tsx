@@ -13,7 +13,7 @@ const Home = () => {
         <div className="md:flex md:justify-center h-screen">
 
             <div className=" md:border-black md:w-[100%] md:mt-20 md:flex md:flex-row md:space-x-8">
-                {/* if screen width is greater than 1024px, show both components - otherwise set based on state("Tasks") */}
+                {/* if screen width is greater than 110px, show both components - otherwise set based on state("Tasks") */}
                 {(isLargeScreen || thePage === "Trackers") && <Tracking setThePage={setThePage} />}
                 {(isLargeScreen || thePage === "Tasks") && <Tasks setThePage={setThePage} />}
             </div>

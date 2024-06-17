@@ -45,6 +45,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
         { id: 1, icon: FitnessIcon, label: 'Complete 1 mile' },
         { id: 2, icon: WorkIcon, label: 'Complete a work task' },
         { id: 3, icon: PersonalIcon, label: 'Meditate 15 minutes' },
+        { id: 1, icon: FitnessIcon, label: 'Curls for 5 reps' }
     
     ];
 

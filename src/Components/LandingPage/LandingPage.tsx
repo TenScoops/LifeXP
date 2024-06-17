@@ -185,7 +185,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* What is LifeXP */}
-            <div ref={aboutSectionRef} className={`h-[620px] mt-32 mb-10  md:mt-0 flex flex-col justify-center items-center space-y-16 transition-opacity ease-in duration-300 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={aboutSectionRef} className={`h-[620px] mt-16  mb-10  flex flex-col justify-center items-center space-y-8 lg:space-y-16 transition-opacity ease-in duration-300 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <h1 className="text-2xl md:text-3xl">What exactly is LifeXP?</h1>
                 <p className="w-[90%] text-center text-lg leading-10 md:leading-10 tracking-normal md:text-left md:w-[60%] md:text-xl ">
                     Life XP is a gamified productivity app designed to cater to a broader range of needs beyond task management.

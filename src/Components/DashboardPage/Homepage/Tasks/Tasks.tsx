@@ -45,7 +45,7 @@ const Tasks: React.FC<TasksProps> = ({setThePage}) => {
 
             </div>
 
-            <div className="w-10/12 xl:w-auto grid grid-cols-1 gap-4 xl:grid-cols-3 xl:gap-0 ">
+            <div className="w-10/12 md:9/12 3xl:w-auto grid grid-cols-1 gap-4 3xl:grid-cols-3 3xl:gap-0 ">
                 {/* Fitness */}
                 <Fitness />
 

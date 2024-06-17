@@ -16,10 +16,10 @@ const ProfileAndMenu = () => {
             onClick={() => {setOpenProfileOptions(!openProfileOptions)}}
             className='flex items-center cursor-pointer icon-hover3'
             >
-                <div className='hidden md:flex border border-black rounded-full justify-center w-[18px] h-[18px] mr-3 cursor-pointer'>
+                <div className='hidden md:flex border border-black rounded-full justify-center w-[16px] h-[16px] mr-3 cursor-pointer'>
                     
                 </div>
-                <h1 className='mr-5'>user</h1>
+                <h1 className='mr-5'>Guest</h1>
         </div>
 
         {/* menu */}

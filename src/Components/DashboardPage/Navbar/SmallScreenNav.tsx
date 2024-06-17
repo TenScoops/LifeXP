@@ -32,7 +32,7 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
             <div className="flex items-center mb-16 mr-5">
                 
                 <h1 className="text-lg">
-                    Hi, user
+                    Hi, Guest
                 </h1>
             </div>
 
