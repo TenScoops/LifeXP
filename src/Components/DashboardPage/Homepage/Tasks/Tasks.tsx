@@ -19,7 +19,7 @@ interface TasksProps {
 
 const Tasks: React.FC<TasksProps> = ({setThePage}) => {
     const css = {
-        "xpdiv": "lg1:hidden ml-0 flex items-center justify-center h-11 w-11 border-1" +
+        "xpdiv": "lg2:hidden ml-0 flex items-center justify-center h-11 w-11 border-1" +
             "bg-slate-50 border-black shadow-sharp-sm cursor-pointer icon-hover4" +
             "transition-transform duration-200 hover:shadow-sharp-md"
     }
