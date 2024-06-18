@@ -61,7 +61,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             {/* {toHomeScreen && <Navigate to="/"/>} */}
             {/* main content */}
             {/* Tasks section */}
-            <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 ${isTasksSectionVisible? "slide-top" : "opacity-0"}`}>
+            <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 transition-opacity ease-in duration-300 ${isTasksSectionVisible? "slide-top" : "opacity-0"}`}>
                 <div className="hidden lg:flex items-center space-x-4 lg:ml-20 mb-10 xl:mb-0">
                     <GameIcon width={"37"} height={"37"} />
                     <h1 className="text-[36px] tracking-wider text-gray-900">
