@@ -14,7 +14,7 @@ export default {
         'lmd': '990px',
         'lg': '1024px',
         'lg1':'1025px', 
-        'lg2': '1100px',    
+        'lg2': '1100px',
         'xl': '1280px',     
         '2xl': '1536px',
         '3xl': '1800px'    

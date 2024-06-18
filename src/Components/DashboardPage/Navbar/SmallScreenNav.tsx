@@ -112,7 +112,7 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
             </div>
 
             <NavLink
-                to={"/landing"}>
+                to={"/"}>
                 <div
                     onClick={() => {setHamburgerOption(!hamburgerOption)}}
                     className='text-sm absolute bottom-4 right-4 flex flex-row items-center space-x-2 cursor-pointer'>

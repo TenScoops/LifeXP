@@ -40,7 +40,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
     const isFooterSectionVisible = isSectionVisible(footerSectionRef);
 
     return (
-        <div className="h-screen tracking-tight">
+        <div className="h-screen tracking-tight overflow-x-hidden">
             {/* <Login isOpen={loginFormShowing} /> */}
 
             {/* Nav */}
@@ -49,7 +49,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
                 {/* <NavLink to="/home"> */}
                     <button
                         onClick={handleLoginClick}
-                        className="flex flex-row items-center justify-center h-9 w-32 sm:mr-6 mt-1 border custom-gray 
+                        className="flex flex-row items-center justify-center h-9 w-32 mr-3 sm:mr-6 mt-1 border custom-gray 
                                     border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 
                                     cursor-pointer">
                         <h1 className="mr-2">Login</h1>
@@ -62,7 +62,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             {/* main content */}
             {/* Tasks section */}
             <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 transition-opacity ease-in duration-300 ${isTasksSectionVisible? "opacity-100" : "opacity-0"}`}>
-                <div className="hidden lg:flex items-center space-x-4 lg:ml-20 ">
+                <div className="hidden lg:flex items-center space-x-4 lg:ml-20 mb-10 xl:mb-0">
                     <GameIcon width={"37"} height={"37"} />
                     <h1 className="text-[36px] tracking-wider text-gray-900">
                         Your Life Into XP!
@@ -75,24 +75,27 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
                     <div className="grid lg:grid-cols-2 w-[82%]  justify-center">
                         <div className=" flex flex-col justify-center items-center lg:items-start ml-6 lg:ml-0">
 
-                            <h1 className="text-3xl mb-5">
+                            <h1 className="text-2xl sm:text-3xl mb-5">
                                 Get xp from tasks!
                             </h1>
-                            <p className="text-xl mb-10 w-[515px]">
+                            <p className=" text-lg sm:text-xl mb-10 w-[90%] xl:w-[515px]">
                                 Gain experience points from your day to day tasks!
                             </p>
                             {/* <NavLink to={"/home"}> */}
-                                <button 
-                                    onClick={handleLoginClick}
-                                    className="flex flex-row space-x-4 items-center justify-center 
-                                                        h-10 w-40 mr-6 mt-1 mb-2 border custom-gray border-black shadow-sharp 
-                                                        shadow-transition hover:shadow-sharp-xl icon-hover4 cursor-pointer">
-                                    <span>Get Started</span>
-                                    <GameIcon width={"14"} height={"14"} />
-                                </button>
+                            <button 
+                                onClick={handleLoginClick}
+                                className="flex flex-row space-x-4 items-center justify-center 
+                                                    h-8 sm:h-10 w-40 mr-6 mt-1 mb-2 border custom-gray border-black shadow-sharp 
+                                                    shadow-transition hover:shadow-sharp-xl icon-hover4 cursor-pointer">
+                                <span>Get Started</span>
+                                <GameIcon width={"14"} height={"14"} />
+                            </button>
                             {/* </NavLink> */}
                         </div>
-                        <div>
+                        <div className="sm:hidden flex items-center justify-center">
+                            <img src={taskImg} width={420} height={420} />
+                        </div>
+                        <div className="hidden sm:block">
                             <img src={taskImg} width={600} height={600} />
                         </div>
                     </div>
@@ -136,7 +139,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
                         <h1 className="text-3xl mb-5">
                             Complete Quests!
                         </h1>
-                        <p className="text-xl mb-10 w-[500px]">
+                        <p className="text-xl mb-10 w-[90%] xl:w-[500px] ">
                             Take on quests similar to your day to day tasks and gain Rewards and levels!
                         </p>
                         {/* <NavLink to={"/home"}> */}
@@ -185,7 +188,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* What is LifeXP */}
-            <div ref={aboutSectionRef} className={`h-[620px] mt-16  mb-10  flex flex-col justify-center items-center space-y-8 lg:space-y-16 transition-opacity ease-in duration-300 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={aboutSectionRef} className={`h-[620px] mt-20 sm:mt-16  mb-10  flex flex-col justify-center items-center space-y-8 lg:space-y-16 transition-opacity ease-in duration-300 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
                 <h1 className="text-2xl md:text-3xl">What exactly is LifeXP?</h1>
                 <p className="w-[90%] text-center text-lg leading-10 md:leading-10 tracking-normal md:text-left md:w-[60%] md:text-xl ">
                     Life XP is a gamified productivity app designed to cater to a broader range of needs beyond task management.
@@ -194,14 +197,14 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
                     a comprehensive solution for boosting productivity and emotional health.
                 </p>
                 {/* <NavLink to={"/home"}> */}
-                    <button 
-                        onClick={handleLoginClick}
-                        className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
-                                        mt-1 border custom-gray border-black shadow-sharp shadow-transition 
-                                        hover:shadow-sharp-xl icon-hover4 cursor-pointer">
-                        <span>Get Started</span>
-                        <GameIcon width={"14"} height={"14"} />
-                    </button>
+                <button 
+                    onClick={handleLoginClick}
+                    className="flex flex-row space-x-4 items-center justify-center h-10 w-40  
+                                    mt-1 border custom-gray border-black shadow-sharp shadow-transition 
+                                    hover:shadow-sharp-xl icon-hover4 cursor-pointer">
+                    <span>Get Started</span>
+                    <GameIcon width={"14"} height={"14"} />
+                </button>
                 {/* </NavLink> */}
             </div>
 
