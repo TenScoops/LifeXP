@@ -61,7 +61,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             {/* {toHomeScreen && <Navigate to="/"/>} */}
             {/* main content */}
             {/* Tasks section */}
-            <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 transition-opacity ease-in duration-300 ${isTasksSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={tasksSectionRef} className={`lg:ml-10 mb-5 mt-10 ${isTasksSectionVisible? "slide-top" : "opacity-0"}`}>
                 <div className="hidden lg:flex items-center space-x-4 lg:ml-20 mb-10 xl:mb-0">
                     <GameIcon width={"37"} height={"37"} />
                     <h1 className="text-[36px] tracking-wider text-gray-900">
@@ -103,7 +103,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* levelup  section*/}
-            <div ref={levelUpSectionRef} className={`hidden lg:flex flex-col justify-center items-center h-[520px] ml-8 transition-opacity ease-in duration-300 ${isLevelUpSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={levelUpSectionRef} className={`hidden lg:flex flex-col justify-center items-center h-[520px] ml-8  ${isLevelUpSectionVisible? "slide-top2" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[80%] ">
                     <img src={levelImg} width={400} />
                     <div className=" flex flex-col items justify-center">
@@ -132,7 +132,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* Questing section */}
-            <div ref={questSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isQuestSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={questSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12  ${isQuestSectionVisible? "slide-top" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[90%]">
                     <div className=" flex flex-col items justify-center">
 
@@ -158,7 +158,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* Emotional check-in section */}
-            <div ref={emotionalCheckInSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isEmotionalCheckInSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={emotionalCheckInSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 ${isEmotionalCheckInSectionVisible? "slide-top" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[85%]">
                     <img src={emcheckinImg} width={500} />
                     <div className=" flex flex-col items justify-center">
@@ -188,7 +188,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* What is LifeXP */}
-            <div ref={aboutSectionRef} className={`h-[620px] mt-20 sm:mt-16  mb-10  flex flex-col justify-center items-center space-y-8 lg:space-y-16 transition-opacity ease-in duration-300 ${isAboutSectionVisible? "opacity-100" : "opacity-0"}`}>
+            <div ref={aboutSectionRef} className={`h-[620px] mt-20 sm:mt-16  mb-10  flex flex-col justify-center items-center space-y-8 lg:space-y-16 ${isAboutSectionVisible? "slide-top2" : "opacity-0"}`}>
                 <h1 className="text-2xl md:text-3xl">What exactly is LifeXP?</h1>
                 <p className="w-[90%] text-center text-lg leading-10 md:leading-10 tracking-normal md:text-left md:w-[60%] md:text-xl ">
                     Life XP is a gamified productivity app designed to cater to a broader range of needs beyond task management.
