@@ -3,10 +3,20 @@ import { IoIosCheckbox } from "react-icons/io";
 
 // import { FitnessIcon } from "../../../Icons";
 
+import { Dispatch, SetStateAction } from "react";
+
+import PropTypes from 'prop-types';
+
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
-const Fitness = () => {
+
+interface FitnessProps {
+    openPopup : boolean,
+    setOpenPopup : Dispatch<SetStateAction<boolean>>
+}
+
+const Fitness : React.FC<FitnessProps> = ({openPopup,setOpenPopup}) => {
     return (<div className="  3xl:ml-16">
         <div className="flex justify-between ">
             {/* <div className="flex items-center mb-2"> */}
@@ -16,7 +26,7 @@ const Fitness = () => {
             <Tippy
                 delay={100}
                 content="add a task">
-                <button>
+                <button onClick={()=>{setOpenPopup(!openPopup)}}>
                     <CiSquarePlus size={25} className="icon-hover" />
                 </button>
             </Tippy>
@@ -43,4 +53,11 @@ const Fitness = () => {
         </div>
     </div>)
 }
+
+Fitness.propTypes = {
+    openPopup:PropTypes.bool.isRequired,
+    setOpenPopup: PropTypes.func.isRequired
+}
+
 export default Fitness
+

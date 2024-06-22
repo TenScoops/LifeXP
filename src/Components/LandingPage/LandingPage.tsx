@@ -132,7 +132,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* Questing section */}
-            <div ref={questSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isQuestSectionVisible? "slide-top" : "opacity-0"}`}>
+            <div ref={questSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isQuestSectionVisible? "slide-top2" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[90%]">
                     <div className=" flex flex-col items justify-center">
 
@@ -158,7 +158,7 @@ const LandingPage: React.FC<LandingPageProps>  = ({ handleLoginClick }) => {
             </div>
 
             {/* Emotional check-in section */}
-            <div ref={emotionalCheckInSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isEmotionalCheckInSectionVisible? "slide-top" : "opacity-0"}`}>
+            <div ref={emotionalCheckInSectionRef} className={`hidden lg:flex justify-center items-center h-[620px] ml-12 transition-opacity ease-in duration-300 ${isEmotionalCheckInSectionVisible? "slide-top2" : "opacity-0"}`}>
                 <div className="grid lg:grid-cols-2 w-[85%]">
                     <img src={emcheckinImg} width={500} />
                     <div className=" flex flex-col items justify-center">
