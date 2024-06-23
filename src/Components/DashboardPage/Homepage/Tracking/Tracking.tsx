@@ -54,14 +54,14 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
         "hoverBase": "relative bottom-14 left-0 border-2 bg-white border-black w-80 h-24 rounded-md text-xs space-y-3 flex flex-col justify-center",
         "hover1": "w-44 h-4 border border-black mr-3 rounded-lg ml-2",
         "hover2": "bg-levelup-gray1 hover:bg-levelup-gray2 h-3 ml-[2px] mt-[1.2px] border border-black rounded-2xl",
-        "pageButton": "absolute left-5 top-20 md:top-20 md:left-14 ml-0 bg-white flex items-center justify-center lg1:hidden h-11 w-11 border-1" +
+        "pageButton": "absolute left-5 top-20 md:top-20 md:left-14 ml-0 bg-white flex items-center justify-center lg2:hidden h-11 w-11 border-1" +
             "bg-slate-50 border-black shadow-sharp-sm cursor-pointer icon-hover4" +
             "transition-transform duration-200 hover:shadow-sharp-md"
     }
 
     return (
 
-        <div className="w-full border-t border-black flex-col md2:flex lg1:w-96 lg1:border-r lg1:rounded-r-md relative">
+        <div className="w-full border-t border-black flex-col md2:flex lg2:w-96 border-r rounded-r-md relative">
             <Tippy
                 content="You're on a 1 day streak!"
                 arrow={false}
@@ -72,7 +72,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                     <FireIcon width={"15"} height={"17"} />
                 </div>
             </Tippy>
-            <div className="flex flex-col items-center space-y-20 h-full ">
+            <div className="flex flex-col items-center space-y-20 h-screen ">
 
                 {/* change page button */}
                 <Tippy
@@ -109,12 +109,12 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                     </div>
                 </div>
                 {/* Tracked quests */}
-                <div className="space-y-3 text-sm flex flex-col items-center w-full">
+                <div className="flex flex-col relative space-y-3 text-sm items-center lg:w-full">
                     <h1 className="underline mb-2">Tracked Quests</h1>
                     
                     {/* Quests */}
               
-                    <div className="flex flex-col items-center relative  w-full space-y-3">
+                    <div className="flex flex-col items-center relative w-full space-y-3">
                         {questItems.map((item, index) => (
                             <div key={item.id} className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
                                 <span className="ml-2">
@@ -132,9 +132,10 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                         ))}
                         
                     </div>
-                  
-                {/* level up meter */}
-                <div className="flex flex-col absolute bottom-0 items-center text-sm  mt-12">
+                
+            </div>
+            {/* level up meter */}
+            <div className="flex flex-col absolute bottom-0 items-center text-sm  mt-12">
                     {/* level and xp */}
                     <div className="mb-4 cursor-default">
                         <h1>Level: 5</h1>
@@ -176,13 +177,12 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                                 </div>
                                 <h1>Level 2: Personal</h1>
                             </div>
-                        </div>
+                            </div>
                     </div>
 
-                </div>
             </div>
         </div>
-        </div>
+    </div>
         
     )
 }

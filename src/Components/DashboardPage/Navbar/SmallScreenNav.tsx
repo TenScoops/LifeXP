@@ -32,13 +32,13 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
             </div>
 
             {/* profile circle icon */}
-            <div className="flex flex-col items-center mb-12 mr-5 space-y-4">
+            <div className="flex flex-col items-center mb-[50px] mr-5 space-y-4">
                 
                 <h1 className="text-lg">
                     Hi, Guest
                 </h1>
                 <div className='flex flex-row  items-center space-x-1'>
-                <PiCoins size={20}/><h1 className='text-sm'>35 coins</h1>
+                    <PiCoins size={20}/><h1 className='text-sm'>35 coins</h1>
                 </div>
             </div>
 
