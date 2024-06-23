@@ -29,7 +29,7 @@ const Tasks: React.FC<TasksProps> = ({setThePage}) => {
     return (
         <div className="flex flex-col lg1:border-l md:border-t lg1:rounded-l-md md:border-black w-full lg2:w-9/12 items-center space-y-6 relative">
 
-            <div className="flex flex-row mt-20 md:mt-14 items-center w-10/12">
+            <div className="flex flex-row mt-20 md:mt-14 items-center w-10/12 md:w-9/12">
                 <Tippy
                     content="XP Tracker"
                     delay={700}>

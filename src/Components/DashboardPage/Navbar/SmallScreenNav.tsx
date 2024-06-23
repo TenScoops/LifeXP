@@ -1,8 +1,11 @@
+
+
 import { FaDoorOpen, FaTree } from "react-icons/fa";
-import { GiScrollUnfurled, } from "react-icons/gi";
+import { GiAchievement, GiScrollUnfurled } from "react-icons/gi";
+import { HiCheckBadge } from "react-icons/hi2";
 import { IoMdSettings } from "react-icons/io";
 import { MdHome } from "react-icons/md";
-import { PiSmileyFill } from "react-icons/pi";
+import { PiCoins, PiCoinsFill, PiSmileyFill } from "react-icons/pi";
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 import { Dispatch, SetStateAction } from 'react';
@@ -29,11 +32,14 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
             </div>
 
             {/* profile circle icon */}
-            <div className="flex items-center mb-16 mr-5">
+            <div className="flex flex-col items-center mb-12 mr-5 space-y-4">
                 
                 <h1 className="text-lg">
                     Hi, Guest
                 </h1>
+                <div className='flex flex-row  items-center space-x-1'>
+                <PiCoins size={20}/><h1 className='text-sm'>35 coins</h1>
+                </div>
             </div>
 
             {/* navbar options */}
@@ -71,6 +77,22 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
                             </div>
                         </NavLink>
                     </li>
+                    
+                    <li>
+                        <NavLink
+                            to="/checkin"
+                            className={({isActive}) => isActive ? 'active-link2' : ''}>
+                            <div
+                                className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
+                                onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                            >
+                                <PiSmileyFill size={27} />
+                                <span className='hover:underline'>
+                                    Check-in
+                                </span>
+                            </div>
+                        </NavLink>
+                    </li>
                     <li >
                         <NavLink
                             to="/skilltree"
@@ -88,19 +110,42 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink
-                            to="/checkin"
-                            className={({isActive}) => isActive ? 'active-link2' : ''}>
-                            <div
-                                className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
-                                onClick={() => {setHamburgerOption(!hamburgerOption)}}
-                            >
-                                <PiSmileyFill size={27} />
-                                <span className='hover:underline'>
-                                    Check-in
-                                </span>
-                            </div>
-                        </NavLink>
+                        
+                        <div
+                            className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
+                            onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                        >
+                            <GiAchievement size={27} />
+                            <span className='hover:underline'>
+                                Achievements
+                            </span>
+                        </div>
+                    
+                    </li>
+                    <li>
+                        <div
+                            className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
+                            onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                        >
+                            <HiCheckBadge size={27} />
+                            <span className='hover:underline'>
+                                Badges
+                            </span>
+                        </div>
+                    
+                    </li>
+                    <li>
+                        
+                        <div
+                            className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
+                            onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                        >
+                            <PiCoinsFill size={27} />
+                            <span className='hover:underline'>
+                                Store
+                            </span>
+                        </div>
+                        
                     </li>
 
                 </ul>
@@ -110,7 +155,8 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
             <div className='text-sm absolute bottom-4 left-4 flex flex-row items-center space-x-2 cursor-pointer'>
                 <IoMdSettings size={23} /> <h1>Settings</h1>
             </div>
-
+            
+            
             <NavLink
                 to={"/"}>
                 <div

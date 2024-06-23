@@ -37,19 +37,7 @@ const MdScreenNavPlus = () => {
                     </div>
                 </NavLink>
             </li>
-            <li >
-                <NavLink
-                    to="/skilltree"
-                    className={({isActive}) => isActive ? 'active-link' : ''}
-                >
-                    <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
-                        <FaTree size={25} />
-                        <span className='text-sm'>
-                            Skill Tree
-                        </span>
-                    </div>
-                </NavLink>
-            </li>
+           
             <li >
                 <NavLink
                     to="/checkin"
@@ -63,6 +51,24 @@ const MdScreenNavPlus = () => {
                     </div>
                 </NavLink>
             </li>
+
+            <li >
+            <Tippy
+                    delay={10}
+                    placement="bottom"
+                    content="in progress"
+                >
+                   
+                <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
+                    <FaTree size={25} />
+                    <span className='text-sm'>
+                        Skill Tree
+                    </span>
+                </div>
+                   
+                </Tippy>
+            </li>
+            
             <li className=" hidden lg:block">
                 <Tippy
                     delay={10}
