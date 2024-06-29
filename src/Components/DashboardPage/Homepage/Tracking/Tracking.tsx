@@ -22,30 +22,35 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
 
 
     const questOptionsRef: React.MutableRefObject<null> = useRef(null)
-    useOutsideClick({ref: questOptionsRef, callback: () => {setOpenMenuIndex(null)}});
+    useOutsideClick({ref: questOptionsRef, callback: () => {setOpenMenuIndex(null)}})
 
-    const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
+    const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null)
+    const [hiddenQuests, setHiddenQuests] = useState<number[]>([])
     
-    const DropDown = () => {
+    
+    const DropDown = ({id}:{id:number} ) => {
         return (
             <div 
                 ref={questOptionsRef}
                 className="h-20 w-36 border bg-white border-black border-b-2 absolute right-5 space-y-2 ">
-                <h1 className="hover:bg-gray-200 px-2 py-1">Untrack</h1>
-                <h1 className="hover:bg-gray-200 px-2 py-1">Mark complete</h1>
+                <h1 onClick={()=>{handleUntrackAndComplete(id)}} className="hover:bg-gray-200 px-2 py-1">Untrack</h1>
+                <h1 onClick={()=>{handleUntrackAndComplete(id)}} className="hover:bg-gray-200 px-2 py-1">Mark complete</h1>
             </div>
         );
     };
-
+    const handleUntrackAndComplete = (id:number) =>{
+        setHiddenQuests([...hiddenQuests, id]) // Add the quest ID to the list of hidden quests
+        setOpenMenuIndex(null); // Close the dropdown after untracking
+    }
     const handleMenuClick = (index: number) => {
-        setOpenMenuIndex(openMenuIndex === index ? null : index);
+        setOpenMenuIndex(openMenuIndex === index ? null : index); // checks if the dropdown menu for the current item should be open
     };
 
     const questItems = [
         { id: 1, icon: FitnessIcon, label: 'Complete 1 mile' },
         { id: 2, icon: WorkIcon, label: 'Complete a work task' },
         { id: 3, icon: PersonalIcon, label: 'Meditate 15 minutes' },
-        { id: 1, icon: FitnessIcon, label: 'Curls for 5 reps' }
+        { id: 4, icon: FitnessIcon, label: 'Curls for 5 reps' }
     
     ];
 
@@ -116,7 +121,8 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
               
                     <div className="flex flex-col items-center relative w-full space-y-3">
                         {questItems.map((item, index) => (
-                            <div key={item.id} className=" flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md">
+                           !hiddenQuests.includes(item.id)&& (//render if id is not in hiddenquests array
+                            <div key={item.id} className= "flex flex-row justify-between items-center cursor-pointer hover:border-2 hover:w-[282px] space-x-3 w-[278px] border border-black h-10 rounded-md ">
                                 <span className="ml-2">
                                     <item.icon width={"28"} height={"28"} />
                                 </span>
@@ -127,9 +133,9 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                                 >
                                     <PiDotsThreeLight size={25} />
                                 </button>
-                                {openMenuIndex === index && <DropDown />}
+                                {openMenuIndex === index && <DropDown id={item.id} />}
                             </div>
-                        ))}
+                        )))}
                         
                     </div>
                 
