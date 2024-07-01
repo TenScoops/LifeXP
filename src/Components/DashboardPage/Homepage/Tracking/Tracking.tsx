@@ -43,7 +43,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
         setOpenMenuIndex(null); // Close the dropdown after untracking
     }
     const handleMenuClick = (index: number) => {
-        setOpenMenuIndex(openMenuIndex === index ? null : index); // checks if the dropdown menu for the current item should be open
+        setOpenMenuIndex(openMenuIndex === index ? null : index); // if it's open, change to null, otherwise open at index
     };
 
     const questItems = [
@@ -133,6 +133,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                                 >
                                     <PiDotsThreeLight size={25} />
                                 </button>
+                                {/* if it is not null, open dropdown */}
                                 {openMenuIndex === index && <DropDown id={item.id} />}
                             </div>
                         )))}
