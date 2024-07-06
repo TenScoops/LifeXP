@@ -1,6 +1,8 @@
 import FilterMenu from "./FilterMenu";
 import Questcard from "./Questcard";
 
+import { MdCheck } from "react-icons/md";
+
 // import { CiDumbbell } from "react-icons/ci";
 import { FitnessIcon, PersonalIcon, WorkIcon } from "../../Icons";
 
@@ -62,7 +64,15 @@ const AvailableQuests = () => {
                 </div>
 
             </div>
-
+            {/* Notification */}
+            <div className="absolute flex flex-row items-center justify-center  border space-x-2 border-black rounded-md top-[100px] w-48 h-10">
+                <div className="flex flex-row items-center">
+                    {/* <h1 className="text-sm mr-1">+35</h1> */}
+                    <MdCheck size={21}/>
+                </div>
+               
+                <h1 className="text-sm">Quest Accepted</h1>
+            </div>
         </div>
     )
 }

@@ -11,6 +11,7 @@ import Fitness from "./Fitness";
 import Personal from "./Personal";
 import Work from "./Work";
 
+import { PiCoins } from "react-icons/pi";
 
 import Popup from "./Popup";
 
@@ -61,6 +62,16 @@ const Tasks: React.FC<TasksProps> = ({setThePage}) => {
             </div>
             
             {openPopup&&<Popup />}
+
+            {/* Notification */}
+            <div className="flex flex-row items-center justify-center absolute border space-x-2 border-black rounded-md top-0 w-48 h-10">
+                <div className="flex flex-row items-center">
+                    <h1 className="text-sm mr-1">+35</h1>
+                    <PiCoins size={21}/>
+                </div>
+               
+                <h1 className="text-sm">Checking in</h1>
+            </div>
         </div>
     )
 }
