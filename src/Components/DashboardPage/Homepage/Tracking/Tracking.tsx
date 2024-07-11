@@ -184,7 +184,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                                 </div>
                                 <h1>Level 2: Personal</h1>
                             </div>
-                            </div>
+                        </div>
                     </div>
 
             </div>
