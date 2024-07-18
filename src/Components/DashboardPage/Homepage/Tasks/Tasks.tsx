@@ -13,7 +13,8 @@ import Work from "./Work";
 
 // import { PiCoins } from "react-icons/pi";
 
-import Notifications from "../../../Notification/Notification";
+// import Notifications from "../../../Notification/Notification";
+
 import Popup from "./Popup";
 
 interface TasksProps {
@@ -73,7 +74,7 @@ const Tasks: React.FC<TasksProps> = ({setThePage}) => {
                
                 <h1 className="text-sm">Checking in</h1>
             </div> */}
-            <Notifications />
+            {/* <Notifications /> */}
         </div>
     )
 }
