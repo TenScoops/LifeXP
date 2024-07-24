@@ -3,7 +3,7 @@ import { IoIosCheckbox } from "react-icons/io";
 
 // import { FitnessIcon } from "../../../Icons";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 import Tippy from '@tippyjs/react';
@@ -27,6 +27,9 @@ const Fitness = () => {
 
     const [newTask, setNewTask] = useState<string>('')
     const [showInput, setShowInput] = useState<boolean>(false)
+    
+    const inputRef = useRef<HTMLInputElement>(null);
+
 
     const handleAddTask = () =>{
         if(newTask.trim() !== ''){
@@ -36,6 +39,18 @@ const Fitness = () => {
         }
     }
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleAddTask();
+        }
+    };
+
+    useEffect(() => {
+        if (showInput && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [showInput]);
+    
     return (<div className="  3xl:ml-16">
         <div className="flex justify-between ">
             {/* <div className="flex items-center mb-2"> */}
@@ -63,9 +78,13 @@ const Fitness = () => {
                 {showInput&&<div>
                         <input type="text"
                             onChange={(e)=>{setNewTask(e.target.value)}} 
+                            onKeyDown={handleKeyDown}
                             placeholder="Enter new task"
-                            className="border border-black p-1"/>
-                            <button onClick={handleAddTask}>add</button>
+                            className=" p-1"
+                            ref={inputRef}
+                            />
+                            
+                            {/* <button onClick={handleAddTask}>add</button> */}
                     </div>}
             </div>
             <div className=" flex items-end mr-2">
