@@ -23,10 +23,10 @@ const Popup = () => {
                         className="border rounded-lg border-black h-32 w-80"/>
                 </form>
                 
-                <div className="ml-8">
+                {/* <div className="ml-8">
                     <h1>Choose Tag</h1>
                     <h1>Difficulty</h1>
-                </div>
+                </div> */}
             </div>
         </div>
 

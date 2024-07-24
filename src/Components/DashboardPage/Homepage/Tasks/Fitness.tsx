@@ -3,20 +3,39 @@ import { IoIosCheckbox } from "react-icons/io";
 
 // import { FitnessIcon } from "../../../Icons";
 
-import { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 
-import PropTypes from 'prop-types';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 
-interface FitnessProps {
-    openPopup : boolean,
-    setOpenPopup : Dispatch<SetStateAction<boolean>>
-}
+// interface FitnessProps {
+//     openPopup : boolean,
+//     setOpenPopup : Dispatch<SetStateAction<boolean>>
+// }
 
-const Fitness : React.FC<FitnessProps> = ({openPopup,setOpenPopup}) => {
+interface Task {
+    id:number,
+    label: string
+}
+const Fitness = () => {
+    const [tasks, setTasks] = useState<Task[]>([
+        { id: 1, label: 'Deadlift' },
+        { id: 2, label: 'Curl 20lb dumbbells' },
+        { id: 3, label: 'Cardio for 20 minutes' }])
+
+    const [newTask, setNewTask] = useState<string>('')
+    const [showInput, setShowInput] = useState<boolean>(false)
+
+    const handleAddTask = () =>{
+        if(newTask.trim() !== ''){
+            setTasks([...tasks, {id: tasks.length + 1, label: newTask}])
+            setNewTask('')
+            setShowInput(false)
+        }
+    }
+
     return (<div className="  3xl:ml-16">
         <div className="flex justify-between ">
             {/* <div className="flex items-center mb-2"> */}
@@ -26,26 +45,28 @@ const Fitness : React.FC<FitnessProps> = ({openPopup,setOpenPopup}) => {
             <Tippy
                 delay={100}
                 content="add a task">
-                <button onClick={()=>{setOpenPopup(!openPopup)}}>
+                <button onClick={()=>{setShowInput(!showInput)}}>
                     <CiSquarePlus size={25} className="icon-hover" />
                 </button>
             </Tippy>
         </div>
         <div className="h-40 3xl:w-96 3xl:h-[600px] flex justify-between border custom-gray border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 transition-transform duration-200 cursor-pointer" >
+            
+            
             <div className="ml-6 mt-6 space-y-4">
-                <form className="flex items-center">
-                    <input type="checkbox" name="category" id="fitness" className="custom-checkbox form-radio h-5 w-5 rounded-none text-gray-600" />
-                    <label htmlFor="fitness" className="ml-2 text-sm">Deadlift</label>
-                </form>
-                <form className="flex items-center">
-                    <input type="checkbox" name="category" id="fitness" className="custom-checkbox form-radio h-5 w-5 text-black-600" />
-                    <label htmlFor="fitness" className="ml-2 text-sm">Curl 20lb dumbbells</label>
-                </form>
-                <form className="flex items-center">
-                    <input type="checkbox" name="category" id="fitness" className="custom-checkbox form-radio h-5 w-5 text-gray-600" />
-                    <label htmlFor="fitness" className="ml-2 text-sm">Cardio for 20 minutes</label>
-
-                </form>
+                {tasks.map((task) => (
+                    <form key={task.id} className="flex items-center">
+                        <input type="checkbox" name="category" id={`task-${task.id}`} className="custom-checkbox form-radio h-5 w-5 rounded-none text-gray-600" />
+                        <label htmlFor={`task-${task.id}`} className="ml-2 text-sm">{task.label}</label>
+                    </form>
+                    ))}
+                {showInput&&<div>
+                        <input type="text"
+                            onChange={(e)=>{setNewTask(e.target.value)}} 
+                            placeholder="Enter new task"
+                            className="border border-black p-1"/>
+                            <button onClick={handleAddTask}>add</button>
+                    </div>}
             </div>
             <div className=" flex items-end mr-2">
                 <IoIosCheckbox className="hover:text-gray-700" size={30} />
@@ -54,10 +75,10 @@ const Fitness : React.FC<FitnessProps> = ({openPopup,setOpenPopup}) => {
     </div>)
 }
 
-Fitness.propTypes = {
-    openPopup:PropTypes.bool.isRequired,
-    setOpenPopup: PropTypes.func.isRequired
-}
+// Fitness.propTypes = {
+//     openPopup:PropTypes.bool.isRequired,
+//     setOpenPopup: PropTypes.func.isRequired
+// }
 
 export default Fitness
 
