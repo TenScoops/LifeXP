@@ -63,7 +63,8 @@ const Fitness = () => {
     }
 
     const handleButtonClick = () =>{
-        return
+        setTasks(tasks.filter(task=>{return !completedTask.has(task.id)}))
+        // setCompletedTask(completedTask.filter(task=>{return task.has()}))
     }
 
     useEffect(() => {
@@ -112,6 +113,7 @@ const Fitness = () => {
                             
                             {/* <button onClick={handleAddTask}>add</button> */}
                     </div>}
+                    {tasks.length === 0 && <h1 className="text-gray-400">No tasks yet</h1>}
             </div>
             <div className=" flex items-end mr-2"
                 onClick={handleButtonClick}>

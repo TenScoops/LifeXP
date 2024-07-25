@@ -149,7 +149,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                         <h1>XP: 400/500</h1>
                     </div>
                     {/* meter div */}
-                    <div className="meterContainer w-72 h-9 mb-10 border border-black rounded-2xl cursor-pointer">
+                    <div className="meterContainer z-50  w-72 h-9 mb-10 border border-black rounded-2xl cursor-pointer">
                         <div className="bg-levelup-gray1 hover:bg-levelup-gray2 w-48 h-7 mb-10 ml-[3px] mt-[3px] border border-black rounded-2xl">
 
                         </div>
