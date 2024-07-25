@@ -27,7 +27,8 @@ const Fitness = () => {
 
     const [newTask, setNewTask] = useState<string>('')
     const [showInput, setShowInput] = useState<boolean>(false)
-    
+    const [completedTask, setCompletedTask] = useState<Set<number>>(new Set())
+
     const inputRef = useRef<HTMLInputElement>(null);
 
 
@@ -44,6 +45,26 @@ const Fitness = () => {
             handleAddTask();
         }
     };
+
+    const handleCheckboxClick = (taskId:number) =>{
+        setCompletedTask(prev => {
+            //set old state as new state(old set will be new set)
+            const newCompletedTasks = new Set(prev)
+            //if there is an id matching what was passed in
+            if(newCompletedTasks.has(taskId)) {
+                //delete task Id
+                newCompletedTasks.delete(taskId)
+            }else{
+                //otherwise add new Id
+                newCompletedTasks.add(taskId)
+            }
+            return newCompletedTasks
+        })
+    }
+
+    const handleButtonClick = () =>{
+        return
+    }
 
     useEffect(() => {
         if (showInput && inputRef.current) {
@@ -71,15 +92,20 @@ const Fitness = () => {
             <div className="ml-6 mt-6 space-y-4">
                 {tasks.map((task) => (
                     <form key={task.id} className="flex items-center">
-                        <input type="checkbox" name="category" id={`task-${task.id}`} className="custom-checkbox form-radio h-5 w-5 rounded-none text-gray-600" />
-                        <label htmlFor={`task-${task.id}`} className="ml-2 text-sm">{task.label}</label>
+                        <input 
+                            type="checkbox" 
+                            name="category" 
+                            id={`task-${task.id}`}
+                            onChange={()=>{handleCheckboxClick(task.id)}} 
+                            className="custom-checkbox form-radio h-5 w-5 rounded-none text-gray-600" />
+                        <label htmlFor={`task-${task.id}`} className={`ml-2 text-sm ${completedTask.has(task.id) && 'line-through'}`}>{task.label}</label>
                     </form>
                     ))}
                 {showInput&&<div>
                         <input type="text"
                             onChange={(e)=>{setNewTask(e.target.value)}} 
                             onKeyDown={handleKeyDown}
-                            placeholder="Enter new task"
+                            placeholder="Enter a new task"
                             className=" p-1"
                             ref={inputRef}
                             />
@@ -87,8 +113,10 @@ const Fitness = () => {
                             {/* <button onClick={handleAddTask}>add</button> */}
                     </div>}
             </div>
-            <div className=" flex items-end mr-2">
-                <IoIosCheckbox className="hover:text-gray-700" size={30} />
+            <div className=" flex items-end mr-2"
+                onClick={handleButtonClick}>
+                   {completedTask.size >0 && <h1> +{completedTask.size * 25} XP</h1>}
+               {completedTask.size > 0 && <IoIosCheckbox className="hover:text-gray-700" size={30} />}
             </div>
         </div>
     </div>)
