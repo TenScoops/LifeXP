@@ -126,7 +126,7 @@ const Work = () => {
                         <input type="text"
                             onChange={(e)=>{setNewTask(e.target.value)}} 
                             onKeyDown={handleKeyDown}
-                            placeholder="Enter a new task"
+                            placeholder="Add a new task"
                             className=" p-1"
                             ref={inputRef}
                             />
@@ -137,8 +137,10 @@ const Work = () => {
             </div>
             <div className=" flex items-end mr-2"
                 onClick={handleButtonClick}>
-                   {completedTask.size >0 && <h1> +{completedTask.size * 25} XP</h1>}
+                   <div className="flex items-center">
+                   {completedTask.size >0 && <h1 className="text-sm"> +{completedTask.size * 25} XP</h1>}
                {completedTask.size > 0 && <button><IoIosCheckbox className="hover:text-gray-700" size={30} /></button>}
+                    </div>
             </div>
         </div>
     </div>)

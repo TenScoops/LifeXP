@@ -23,7 +23,7 @@ const Notification:React.FC<NotificationProps> = ({setAccepted}) =>{
     // if(!isVisible) return null 
 
     return (
-    <div className={`flex flex-row items-center justify-center absolute border space-x-2 border-black rounded-md top-[100px] w-48 h-10 fade ${!isVisible && 'hide'}`}>
+    <div className={`flex flex-row items-center justify-center bg-white absolute border space-x-2 border-black rounded-md top-[100px]  w-48 h-10 fade ${!isVisible && 'hide'}`}>
         {/* <div className="flex flex-row items-center">
             
             <PiCoins size={21}/>

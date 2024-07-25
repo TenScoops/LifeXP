@@ -2,6 +2,7 @@ import { useState } from "react";
 import FilterMenu from "./FilterMenu";
 import Questcard from "./Questcard";
 
+import { Scroll } from "../../Icons";
 // import { MdCheck } from "react-icons/md";
 
 // import { CiDumbbell } from "react-icons/ci";
@@ -47,6 +48,11 @@ const AvailableQuests = () => {
         }
     ]
 
+    const scroll = (): React.ReactNode => {
+        return <div className="mb-10">
+            <Scroll />
+        </div>
+    }
     const handleAccept = (id:number) =>{
         setQuestAccepted([...questAccepted, id])
         setAccepted(true)
@@ -80,6 +86,13 @@ const AvailableQuests = () => {
                             />
                         ))}
                     </div>
+                    {questAccepted.length === 4 && <div className="flex flex-col justify-center">
+                        {/* No quests display */}
+                        <div className="flex items-center justify-center w-[240px] mb-2 ml-2 mt-10">
+                            {scroll()}
+                        </div>
+                        <h1 className="ml-10"> No quests available. </h1>
+                    </div>}
                 </div>
 
             </div>
