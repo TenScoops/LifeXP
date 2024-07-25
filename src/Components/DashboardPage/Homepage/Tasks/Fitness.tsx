@@ -108,10 +108,10 @@ const Fitness = () => {
                 </button>
             </Tippy>
         </div>
-        <div className="h-40 3xl:w-96 3xl:h-[600px] flex justify-between border custom-gray border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 transition-transform duration-200 cursor-pointer" >
+        <div className="py-6 3xl:w-96 3xl:h-[600px] flex justify-between border custom-gray border-black shadow-sharp shadow-transition hover:shadow-sharp-xl icon-hover4 transition-transform duration-200 cursor-pointer" >
             
             
-            <div className="ml-6 mt-6 space-y-4">
+            <div className="ml-6 mb-5 space-y-4">
                 {tasks.map((task) => (
                     <form key={task.id} className="flex items-center">
                         <input 
