@@ -94,26 +94,24 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
                         </NavLink>
                     </li>
                     <li >
-                        <NavLink
-                            to="/skilltree"
-                            className={({isActive}) => isActive ? 'active-link2' : ''}>
-                            <div
-                                className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
-                                onClick={() => {setHamburgerOption(!hamburgerOption)}}
-                            >
+                       
+                        <div
+                            className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
+                            
+                        >
 
-                                <FaTree size={26} />
-                                <span>
-                                    Skill Tree
-                                </span>
-                            </div>
-                        </NavLink>
+                            <FaTree size={26} />
+                            <span>
+                                Skill Tree
+                            </span>
+                        </div>
+                       
                     </li>
                     <li>
                         
                         <div
                             className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
-                            onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                           
                         >
                             <GiAchievement size={27} />
                             <span className='hover:underline'>
@@ -125,7 +123,7 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
                     <li>
                         <div
                             className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
-                            onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                            
                         >
                             <HiCheckBadge size={27} />
                             <span className='hover:underline'>
@@ -138,7 +136,7 @@ const SmallScreenNav: React.FC<SmallScreenNavProps> = ({hamburgerOption, setHamb
                         
                         <div
                             className='flex items-center space-x-2 icon-hover2 cursor-pointer hover:underline'
-                            onClick={() => {setHamburgerOption(!hamburgerOption)}}
+                            
                         >
                             <PiCoinsFill size={27} />
                             <span className='hover:underline'>
