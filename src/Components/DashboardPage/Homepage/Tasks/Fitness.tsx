@@ -63,8 +63,29 @@ const Fitness = () => {
     }
 
     const handleButtonClick = () =>{
-        setTasks(tasks.filter(task=>{return !completedTask.has(task.id)}))
-        // setCompletedTask(completedTask.filter(task=>{return task.has()}))
+        setTasks(prevTasks => {
+            // Filter out completed tasks from the list of tasks
+            const updatedTasks = prevTasks.filter(task => !completedTask.has(task.id));
+            
+            // Update the completed tasks set
+            setCompletedTask(prevCompletedTasks => {
+                // Create a new set to store remaining completed tasks
+                const newCompletedTasks = new Set<number>();
+                
+                // Check which tasks are still in the updatedTasks list
+                prevCompletedTasks.forEach(id => {
+                    if (updatedTasks.some(task => task.id === id)) {
+                        newCompletedTasks.add(id);
+                    }
+                });
+                
+                // Return the new set of completed tasks
+                return newCompletedTasks;
+            });
+            
+            // Return the updated list of tasks
+            return updatedTasks;
+        });
     }
 
     useEffect(() => {
@@ -118,7 +139,7 @@ const Fitness = () => {
             <div className=" flex items-end mr-2"
                 onClick={handleButtonClick}>
                    {completedTask.size >0 && <h1> +{completedTask.size * 25} XP</h1>}
-               {completedTask.size > 0 && <IoIosCheckbox className="hover:text-gray-700" size={30} />}
+               {completedTask.size > 0 && <button><IoIosCheckbox className="hover:text-gray-700" size={30} /></button>}
             </div>
         </div>
     </div>)
