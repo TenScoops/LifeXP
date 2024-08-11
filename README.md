@@ -1,4 +1,4 @@
-## Link to web app: https://lifexponline.com/
+## Link to web app: [https://lifexponline.com/](https://life-xp-kappa.vercel.app/)
 
 ## Synopsis
 
