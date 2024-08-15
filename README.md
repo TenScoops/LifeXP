@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-LifeXP uniquely merges gamification with holistic tools for emotional well-being and personal growth. It steps beyond the realm of the common task management. It emerges as a versatile and customizable platform for life management, adept at enhancing productivity while nurturing emotional and physical health.
+LifeXP is your personal growth companion. By blending gamification with tools that support your emotional and physical well-being, LifeXP turns productivity into a journey of self-care and improvement.
 
 ## Setup
 First clone or download the file
