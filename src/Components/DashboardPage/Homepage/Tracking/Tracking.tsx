@@ -142,7 +142,7 @@ const Tracking: React.FC<TrackingProps> = ({setThePage}) => {
                 
             </div>
             {/* level up meter */}
-            <div className="flex flex-col absolute bottom-0 items-center text-sm  mt-12">
+            <div className="flex flex-col lg2:absolute bottom-0 items-center text-sm  mt-12">
                     {/* level and xp */}
                     <div className="mb-4 cursor-default">
                         <h1>Level: 5</h1>
