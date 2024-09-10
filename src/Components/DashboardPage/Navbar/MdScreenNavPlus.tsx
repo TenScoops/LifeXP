@@ -56,7 +56,7 @@ const MdScreenNavPlus = () => {
             <Tippy
                     delay={10}
                     placement="bottom"
-                    content="in progress"
+                    content="coming soon"
                 >
                    
                 <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
@@ -73,7 +73,7 @@ const MdScreenNavPlus = () => {
                 <Tippy
                     delay={10}
                     placement="bottom"
-                    content="in progress"
+                    content="coming soon"
                 >
                     <div className='flex items-center icon-hover2 space-x-1 cursor-pointer'>
                         <GiAchievement size={29} />
@@ -87,7 +87,7 @@ const MdScreenNavPlus = () => {
                 <Tippy
                         delay={10}
                         placement="bottom"
-                        content="in progress"
+                        content="coming soon"
                     >
                     <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
                         <HiCheckBadge size={25} />
@@ -101,7 +101,7 @@ const MdScreenNavPlus = () => {
                 <Tippy
                         delay={10}
                         placement="bottom"
-                        content="in progress"
+                        content="coming soon"
                     >
                     <div className='flex items-center icon-hover2 space-x-2 cursor-pointer'>
                         <PiCoinsFill size={23} />

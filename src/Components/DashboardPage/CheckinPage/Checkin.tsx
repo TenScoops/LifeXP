@@ -1,16 +1,16 @@
-import {Happy, Ok, Angry, Sad, ReallySad, Depressed, Book, Graph} from "../../Icons"
-import {RxHamburgerMenu} from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Angry, Book, Depressed, Graph, Happy, Ok, ReallySad, Sad } from "../../Icons";
 
-import Moodcard from "./Moodcard"
 import Entry from "./Entry";
+import Moodcard from "./Moodcard";
 
-import {Dispatch, SetStateAction, useState, useRef} from 'react'
+import { Dispatch, SetStateAction, useRef, useState } from 'react';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import PropTypes from 'prop-types';
-import {useOutsideClick} from "../../../Hooks";
+import { useOutsideClick } from "../../../Hooks";
 
 interface CheckinProps {
     setThePage: Dispatch<SetStateAction<string>>
@@ -77,7 +77,7 @@ const Checkin: React.FC<CheckinProps> = ({setThePage}) => {
                                 </div>
                                 <Tippy
                                     placement="right"
-                                    content="in progress">
+                                    content="coming soon">
                                     <div className="flex flex-row ml-2 mt-3 cursor-pointer hover:underline">
                                         {menuIcons.graph}
                                         <h1 className="ml-2 text-sm tracking-wide">
