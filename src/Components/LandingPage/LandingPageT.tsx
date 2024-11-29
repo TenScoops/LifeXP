@@ -1,9 +1,21 @@
+import { BiSolidCategory } from "react-icons/bi";
+import { BsQuestionCircle } from "react-icons/bs";
+import { CiMobile2 } from "react-icons/ci";
+import { FaSmile } from "react-icons/fa";
+import { GiBroadsword, GiScrollQuill, GiScrollUnfurled } from "react-icons/gi";
+import { IoMdJournal } from "react-icons/io";
 import Controller from "../../assets/controller.png";
 import Laptop1 from "../../assets/Laptop.png";
 import Person from "../../assets/Person.png";
 import Mobile from "../../assets/Phones.png";
+// import profile1 from "../../assets/profile1.png";
+import PropTypes from 'prop-types';
 import { Enter, GameIcon } from "../Icons";
-const LandingPageT = ({handleLoginClick}) =>{
+
+interface landingpageprops{
+    handleLoginClick: ()=>void
+}
+const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
     return(<div>
         {/* nav */}
         <div  className={`flex flex-row items-center justify-between h-14 w-full transition-opacity ease-in duration-300 `}>
@@ -25,6 +37,7 @@ const LandingPageT = ({handleLoginClick}) =>{
             </div>
             {/* CTA - login button */}
             <button
+                onClick={handleLoginClick}
                 className="flex flex-row items-center justify-center h-10 w-40 mr-3 sm:mr-6 mt-1 border custom-gray 
                             border-black rounded-xl icon-hover4 
                             cursor-pointer">
@@ -48,6 +61,7 @@ const LandingPageT = ({handleLoginClick}) =>{
                     </div>
                     <h1 className="text-2xl max-w-2xl">Gain experience points from your day to day tasks</h1>
                     <button
+                        onClick={handleLoginClick}
                         className=" flex items-center justify-center h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
                                     border-black rounded-xl icon-hover4 
                                     cursor-pointer">
@@ -65,52 +79,52 @@ const LandingPageT = ({handleLoginClick}) =>{
                 {/* laptops */}
                 <img src={Laptop1}/>
                 {/* buttons to change laptops */}
-                <div>
+                <div className="flex flex-row">
                     <button
-                        className=" h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
+                        className="flex flex-row items-center justify-center h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
                                     border-black rounded-xl icon-hover4 cursor-pointer">
                         <h1 className="mr-4 text-lg">Tasks</h1>
-                    
+                        <GiScrollQuill size={25}/>
                     </button>
                     <button
-                        className=" h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
+                        className="flex flex-row items-center justify-center h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
                                     border-black rounded-xl icon-hover4 cursor-pointer">
                         <h1 className="mr-4 text-lg">Quests</h1>
-                    
+                        <GiScrollUnfurled size={20}/>
                     </button>
                 </div>
             </div>
 
             {/* Features */}
-            <div className="flex flex-col">
-                <div>
-                    <GameIcon width="22" height="22"/>
+            <div className="flex flex-col my-20">
+                <div className="flex flex-row items-center space-x-3">
+                    <BiSolidCategory size={35}/>
                     <h1 className="text-3xl">Features</h1>
                 </div>
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 gap-4">
                     <div className="flex flex-col justify-center">
-                        <GameIcon width="22" height="22"/>
+                        <GiScrollUnfurled size={55}/>
                         <h1 className="text-2xl">Questing</h1>
-                        <p className="max-w-sm text-lg">Accept quests and gain experience</p>
+                        <p className="max-w-xs text-lg">Accept quests and gain experience</p>
                     </div>
                     <div className="flex flex-col justify-center">
-                        <GameIcon width="22" height="22"/>
+                        <GiBroadsword size={55}/>
                         <h1 className="text-2xl">Leveling</h1>
                         <p className="max-w-sm text-lg">Level feature categorized into fitness, work, and personal</p>
                     </div>
                         <img src={Person} width={300}/>
                     <div>
-                        <GameIcon width="22" height="22"/>
+                        <GiScrollQuill size={55}/>
                         <h1 className="text-2xl">Tasking</h1>
                         <p className="max-w-sm text-lg">Create and complete day to day tasks to gain exp</p>
                     </div>
                     <div>
-                        <GameIcon width="22" height="22"/>
+                        <FaSmile size={55}/>
                         <h1 className="text-2xl">Check-in</h1>
                         <p className="max-w-sm text-lg">Check-in daily and view your mood trend on a graph</p>
                     </div>
                     <div>
-                        <GameIcon width="22" height="22"/>
+                        <IoMdJournal size={55}/>
                         <h1 className="text-2xl">Journaling</h1>
                         <p className="max-w-sm text-lg">Journaling feature to journal and manage your mental health</p>
                     </div>
@@ -118,22 +132,24 @@ const LandingPageT = ({handleLoginClick}) =>{
             </div>
 
             {/* see what others say */}
-            <div>
-                <div>
-                    <h1>See what others say</h1>
+            {/* <div className="space-y-4 my-20">
+                <div className="flex flex-row space-x-3">
+                    <FaUser size={35}/>
+                    <h1 className="text-3xl">See what others say</h1>
                 </div>
-                <div>
-                    <h1>“A phenomenal concept, and I love the simplicity of it”</h1>
+                <div className="bg-gray-100 flex flex-row items-center p-6 space-x-3 h-96">
+                    <img src={profile1} width={150} className="rounded-full"/>
+                    <h1 className="text-2xl">“A phenomenal concept, and I love the simplicity of it”</h1>
                 </div>
-            </div>
+            </div> */}
 
             {/* What exactly is LifeXP */}
-            <div>
-                <div>
-                    <GameIcon width="22" height="22"/>
-                    <h1>what exactly is lifeXP?</h1>    
+            <div className="my-20 space-y-7">
+                <div className="flex items-center space-x-3">
+                    <BsQuestionCircle size={40} />
+                    <h1 className="text-3xl">what exactly is lifeXP?</h1>    
                 </div>
-                <p className="max-w-[1400px] text-2xl leading-10">
+                <p className="max-w-[1200px] text-2xl leading-loose">
                 Life XP is a gamified productivity app designed to cater to a broader range of needs 
                 beyond task management. Life XP integrates features that focus on emotional well-being, 
                 personal development, and highly customizable user engagement models. Life XP aims to be 
@@ -142,14 +158,40 @@ const LandingPageT = ({handleLoginClick}) =>{
                 </p>
             </div>
             {/* mobile */}
-            <div>
-                <div>
-                    <GameIcon width="22" height="22"/>
+            <div className="max-w-[1200px] my-20 space-y-7">
+                <div className="flex flex-row items-center">
+                    <CiMobile2 size={45}/>                   
                     <h1 className="text-3xl">Also coming to mobile</h1>
                 </div>
                 <img src={Mobile} width={1450}/>
             </div>
+
+            <footer className={`border-t border-black h-[130px] mt-40 lg:mt-10 transition-opacity ease-in duration-300 w-full`}>
+                <div className="flex justify-center items-center cursor-default mt-3">
+                    <h1 className="text-2xl border-r border-black px-2 mr-2">
+                        Life XP
+                    </h1>
+                    <h2>
+                        Your life into XP
+                    </h2>
+                </div>
+                <div className="flex justify-between mt-12">
+                    <div className="flex flex-row space-x-4 lg:space-x-12 ml-6">
+                        <h2 className="hover:underline cursor-pointer">Privacy Policy</h2>
+                        <h2 className="hover:underline cursor-pointer">Terms of Use</h2>
+                    </div>
+                    <div className="mr-6 cursor-default">
+                        <h1>
+                            {"@2024 Lifexponline.com"}
+                        </h1>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>)
+    
+}
+LandingPageT.propTypes = {
+    handleLoginClick: PropTypes.func.isRequired,
 }
 export default LandingPageT
