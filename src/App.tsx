@@ -8,7 +8,6 @@ import LandingPage from "./Components/LandingPage/LandingPage"
 import Loading from "./Components/LoadingScreen/index"
 import Register from "./Components/Login-Register/Register"
 
-
 import './index.css'
 
 import { Route, Routes, useNavigate } from "react-router-dom"
@@ -19,7 +18,7 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleLoginClick = () => {//logic for loading screen
+    const handleLoginClick = () => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
@@ -33,7 +32,7 @@ const App = () => {
                 <Routes>
                     {/* landing page */}
                     <Route path="/" element={<LandingPage handleLoginClick={handleLoginClick} />} />
-
+                    {/* <Route path="/" element={<LandingPageT handleLoginClick={handleLoginClick}/>} /> */}
                     {/* TODO: login/register route */}
                     <Route path="/register" element={<Register />} />
 
