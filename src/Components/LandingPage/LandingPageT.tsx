@@ -54,7 +54,7 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
         <div className="flex flex-col items-center justify-center mt-12">
           
           {/* intro */}
-            <div className="flex flex-row bg-gray-100 rounded-full h-80 px-20">
+            <div className="flex flex-row bg-gray-100 rounded-full h-80 px-20 slide-left">
                 {/* intro pres */}
                 <div className="flex justify-center flex-col space-y-10">
                     <div className="flex flex-row items-center space-x-3">
@@ -81,7 +81,9 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
             {/* laptops */}
             <div className="flex flex-col items-center mt-4">
                 {/* laptops */}
-                {option==="tasks"?<img width={1400} src={Laptop1}/>:<img width={1400} src={Laptop2}/>}
+                {option==="tasks"?<img width={1400} src={Laptop1} alt="laptop-home" className="slide-up"/>
+                :
+                <img width={1400} src={Laptop2} alt="laptop-quests" className="slide-up"/>}
                 {/* buttons to change laptops */}
                 <div className="flex flex-row">
                     <button
