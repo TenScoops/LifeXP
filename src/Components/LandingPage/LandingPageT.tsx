@@ -6,16 +6,20 @@ import { GiBroadsword, GiScrollQuill, GiScrollUnfurled } from "react-icons/gi";
 import { IoMdJournal } from "react-icons/io";
 import Controller from "../../assets/controller.png";
 import Laptop1 from "../../assets/Laptop.png";
+import Laptop2 from "../../assets/laptop2.png";
+import Mobile from "../../assets/mobile2.png";
 import Person from "../../assets/Person.png";
-import Mobile from "../../assets/Phones.png";
 // import profile1 from "../../assets/profile1.png";
 import PropTypes from 'prop-types';
+import { useState } from "react";
 import { Enter, GameIcon } from "../Icons";
 
 interface landingpageprops{
     handleLoginClick: ()=>void
 }
 const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
+    const [option, setOption] = useState<string>("tasks")
+
     return(<div>
         {/* nav */}
         <div  className={`flex flex-row items-center justify-between h-14 w-full transition-opacity ease-in duration-300 `}>
@@ -77,18 +81,20 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
             {/* laptops */}
             <div className="flex flex-col items-center mt-4">
                 {/* laptops */}
-                <img src={Laptop1}/>
+                {option==="tasks"?<img width={1400} src={Laptop1}/>:<img width={1400} src={Laptop2}/>}
                 {/* buttons to change laptops */}
                 <div className="flex flex-row">
                     <button
-                        className="flex flex-row items-center justify-center h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
-                                    border-black rounded-xl icon-hover4 cursor-pointer">
+                        onClick={()=>{setOption("tasks")}}
+                        className={`flex flex-row items-center justify-center h-10 w-40 mr-3 sm:mr-6 mt-1 border custom-gray 
+                            border-black rounded-xl icon-hover4 cursor-pointer ${option==="tasks"?'bg-black text-white':'bg-white text-black'}` }>
                         <h1 className="mr-4 text-lg">Tasks</h1>
                         <GiScrollQuill size={25}/>
                     </button>
                     <button
-                        className="flex flex-row items-center justify-center h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
-                                    border-black rounded-xl icon-hover4 cursor-pointer">
+                        onClick={()=>{setOption("quests")}}
+                        className={`flex flex-row items-center justify-center h-10 w-40 mr-3 sm:mr-6 mt-1 border custom-gray 
+                                    border-black rounded-xl icon-hover4 cursor-pointer ${option==="quests"?'bg-black text-white':'bg-white text-black'}` }>
                         <h1 className="mr-4 text-lg">Quests</h1>
                         <GiScrollUnfurled size={20}/>
                     </button>
@@ -101,16 +107,16 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                     <BiSolidCategory size={35}/>
                     <h1 className="text-3xl">Features</h1>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
-                    <div className="flex flex-col justify-center">
+                <div className="grid grid-cols-3 gap-6">
+                    <div className="flex flex-col justify-center items-center bg-gray-100 rounded-3xl">
                         <GiScrollUnfurled size={55}/>
                         <h1 className="text-2xl">Questing</h1>
-                        <p className="max-w-xs text-lg">Accept quests and gain experience</p>
+                        <p className="max-w-xs text-center text-lg">Accept quests and gain experience</p>
                     </div>
-                    <div className="flex flex-col justify-center">
+                    <div className="flex flex-col items-center justify-center ">
                         <GiBroadsword size={55}/>
                         <h1 className="text-2xl">Leveling</h1>
-                        <p className="max-w-sm text-lg">Level feature categorized into fitness, work, and personal</p>
+                        <p className="max-w-sm text-center text-lg">Level feature categorized into fitness, work, and personal</p>
                     </div>
                         <img src={Person} width={300}/>
                     <div>
@@ -147,9 +153,9 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
             <div className="my-20 space-y-7">
                 <div className="flex items-center space-x-3">
                     <BsQuestionCircle size={40} />
-                    <h1 className="text-3xl">what exactly is lifeXP?</h1>    
+                    <h1 className="text-3xl">What exactly is lifeXP?</h1>    
                 </div>
-                <p className="max-w-[1200px] text-2xl leading-loose">
+                <p className="max-w-[1220px] text-2xl leading-loose">
                 Life XP is a gamified productivity app designed to cater to a broader range of needs 
                 beyond task management. Life XP integrates features that focus on emotional well-being, 
                 personal development, and highly customizable user engagement models. Life XP aims to be 
@@ -158,7 +164,7 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 </p>
             </div>
             {/* mobile */}
-            <div className="max-w-[1200px] my-20 space-y-7">
+            <div className="max-w-[1220px] my-20 space-y-7">
                 <div className="flex flex-row items-center">
                     <CiMobile2 size={45}/>                   
                     <h1 className="text-3xl">Also coming to mobile</h1>
@@ -166,6 +172,20 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 <img src={Mobile} width={1450}/>
             </div>
 
+            {/* last button */}
+            <div className="mb-10">
+                 <button
+                        onClick={handleLoginClick}
+                        className=" flex items-center justify-center h-10 w-40 bg-white mr-3 sm:mr-6 mt-1 border custom-gray 
+                                    border-black rounded-xl icon-hover4 
+                                    cursor-pointer">
+                                        
+                        <h1 className="mr-4 text-lg">Sign up</h1>
+                        <GameIcon width={"22"} height={"22"} />
+                    </button>
+            </div>
+
+                {/* footer */}
             <footer className={`border-t border-black h-[130px] mt-40 lg:mt-10 transition-opacity ease-in duration-300 w-full`}>
                 <div className="flex justify-center items-center cursor-default mt-3">
                     <h1 className="text-2xl border-r border-black px-2 mr-2">
