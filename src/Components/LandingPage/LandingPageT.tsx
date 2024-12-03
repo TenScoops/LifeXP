@@ -1,17 +1,40 @@
 import { BsQuestionCircle } from "react-icons/bs";
 import { CiMobile2 } from "react-icons/ci";
 import Mobile12 from "../../assets/mobile12.png";
-// import profile1 from "../../assets/profile1.png";
+
 import PropTypes from 'prop-types';
+import { useEffect, useState } from "react";
+import { FaUserGroup } from "react-icons/fa6";
 import Explosion from "../../assets/Explosion.png";
-import { Enter, GameIcon } from "../Icons";
+import profile1 from "../../assets/profile1.png";
+import profile2 from "../../assets/profile2.png";
+import { Enter, GameIcon, Star } from "../Icons";
 
 interface landingpageprops{
     handleLoginClick: ()=>void
 }
 const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
-    // const [option, setOption] = useState<string>("tasks")
-
+    const [reviewIndex, setReviewIndex] = useState<number>(0)
+    const reviews = [
+        {
+            image : <img src={profile1} width={150} className="rounded-full"/>,
+            review: "“A phenomenal concept, clean and simple, with potential to be very impactful” -John" 
+        },
+        {
+            image : <img src={profile2} width={150} className="rounded-full"/>,
+            review: "“A very intriguing concept which has potential to change lives” -Mary" 
+        }
+    ]
+    // function to move to the next review
+    const nextReview = () => {
+        setReviewIndex((prevIndex)=>(prevIndex + 1) % reviews.length)
+    }
+    useEffect(()=>{
+        const intervalId = setInterval(nextReview, 3700)
+        return ()=>{
+            clearInterval(intervalId)
+        }
+    }, [])
     return(<div>
         {/* nav */}
         <div  className={`flex flex-row items-center justify-between h-14 w-full transition-opacity ease-in duration-300 `}>
@@ -26,8 +49,8 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 {/* nav */}
                 <nav>
                     <ul className="flex flex-row space-x-12 text-xl ml-10">
-                        <li>Features</li>
                         <li>About</li>
+                        <li>Mobile</li>
                     </ul>
                 </nav>
             </div>
@@ -70,25 +93,14 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 
                 
           
-            {/* laptops */}
+        
             <div className="flex flex-col items-center mt-4 slide-up">
                <img src={Explosion} width={1000}/>
             </div>
 
            
 
-            {/* see what others say */}
-            {/* <div className="space-y-4 my-20">
-                <div className="flex flex-row space-x-3">
-                    <FaUser size={35}/>
-                    <h1 className="text-3xl">See what others say</h1>
-                </div>
-                <div className="bg-gray-100 flex flex-row items-center p-6 space-x-3 h-96">
-                    <img src={profile1} width={150} className="rounded-full"/>
-                    <h1 className="text-2xl">“A phenomenal concept, and I love the simplicity of it”</h1>
-                </div>
-            </div> */}
-
+           
             {/* What exactly is LifeXP */}
             <div className="my-24 space-y-7">
                 <div className="flex flex-col items-center space-y-3">
@@ -103,6 +115,31 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 solution for boosting productivity and emotional health.
                 </p>
             </div>
+
+             {/* see what others say */}
+             <div className="space-y-4 my-20 flex flex-col">
+                <div className="flex flex-col items-center justify-center">
+                    <FaUserGroup size={35}/>
+                    <h1 className="text-3xl">See what others say</h1>
+                    <h3>Real opinions</h3>
+                </div>
+                <div className="bg-gray-100 flex flex-row items-center p-8 space-x-5 h-80">
+                    {reviews[reviewIndex].image}
+                    
+                    <div className="flex flex-col items-center space-y-5">
+                        <h1 className="text-2xl max-w-4xl">{reviews[reviewIndex].review} </h1>
+                        <div className="flex flex-row space-x-4 mr-16">
+                            <Star />
+                            <Star />
+                            <Star />
+                            <Star />
+                            <Star />
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
             {/* mobile */}
             <div className="max-w-[1000px] flex flex-col items-center my-20 space-y-7">
                 <div className="flex flex-col items-center">
