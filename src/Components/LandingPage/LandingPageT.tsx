@@ -17,12 +17,14 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
     const [reviewIndex, setReviewIndex] = useState<number>(0)
     const reviews = [
         {
+            name: "John",
             image : <img src={profile1} width={150} className="rounded-full"/>,
-            review: "“A phenomenal concept, clean and simple, with potential to be very impactful” -John" 
+            review: "“A phenomenal concept, clean and simple, with potential to be very impactful” " 
         },
         {
+            name: "Mary",
             image : <img src={profile2} width={150} className="rounded-full"/>,
-            review: "“A very intriguing concept which has potential to change lives” -Mary" 
+            review: "“A very intriguing concept which has potential to change lives” " 
         }
     ]
     // function to move to the next review
@@ -127,7 +129,7 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                     {reviews[reviewIndex].image}
                     
                     <div className="flex flex-col items-center space-y-5">
-                        <h1 className="text-2xl max-w-4xl">{reviews[reviewIndex].review} </h1>
+                        <h1 className="text-2xl max-w-4xl">{reviews[reviewIndex].review}<span className="text-xl">-{reviews[reviewIndex].name}</span> </h1>
                         <div className="flex flex-row space-x-4 mr-16">
                             <Star />
                             <Star />
