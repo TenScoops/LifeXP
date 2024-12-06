@@ -85,7 +85,7 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 <Enter />
             </button>
 
-            <button className="block sm:hidden"
+            <button className="block sm:hidden mr-2"
                     onClick={()=>{setNav(true)}}>
                 <RxHamburgerMenu size={30}/>
             </button>
@@ -110,7 +110,7 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
                 </ul>
                 <button 
                     onClick={()=>{setNav(false)}}
-                    className="absolute right-0 top-3">
+                    className="absolute right-2 top-3">
                     <RxHamburgerMenu size={30}/>
                 </button>
             </nav>
