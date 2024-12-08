@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-LifeXP is a personal growth companion. By blending gamification with tools that support your emotional and physical well-being, LifeXP turns productivity into a journey of self-care and improvement.
+LifeXP combines gamification with tools for emotional well-being and personal growth. By combining game-like features with resources for self-improvement, it provides a unique way to track and enhance both mental and physical health. The app makes self-care engaging and effective, helping users see real progress in their personal development.
 
 ## Setup
 First clone or download the file
