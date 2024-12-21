@@ -124,8 +124,8 @@ const LandingPageT:React.FC<landingpageprops> = ({handleLoginClick}) =>{
               
             <div className="flex flex-col items-center space-y-10 mt-14 slide-down">
                 <div className="flex flex-col items-center">
-                    <GameIcon width={"47"} height={"47"} />
-                    <h1 className="text-center text-[22px] sm:text-[26px] lg:text-[36px] px-4 tracking-wider mt-3 text-gray-900">
+                    <GameIcon width={"57"} height={"57"} />
+                    <h1 className="text-center  text-[22px] sm:text-[26px] lg:text-[36px] px-4 tracking-wider mt-3 text-gray-900">
                         Your one app to manage all aspects of your life
                     </h1>
                 </div>
